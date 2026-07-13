@@ -1,0 +1,24 @@
+<div class="modal" [style.display]="display" [style.opacity]="opacity" (click)="onOverlayClick($event)">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+      <span class="close-button" title="Cerrar" (click)="stopCarousel()">&times;</span>
+      
+      @if (activeImages.length > 1) {
+        <span class="carousel-arrow prev" title="Anterior" (click)="onPrevClick()">&#10094;</span>
+        <span class="carousel-arrow next" title="Siguiente" (click)="onNextClick()">&#10095;</span>
+      }
+
+      @if (currentImage) {
+        <img 
+          [src]="currentImage.src" 
+          alt="Evento de Narcóticos Anónimos" 
+          (click)="onImageClick($event)"
+          (mousedown)="pauseCarousel($event)"
+          (mouseup)="resumeCarousel()"
+          (mouseleave)="resumeCarousel()"
+          (touchstart)="pauseCarousel()"
+          (touchend)="resumeCarousel()"
+          (touchcancel)="resumeCarousel()"
+          [style.cursor]="currentCursor">
+      }
+  </div>
+</div>  

@@ -1,0 +1,76 @@
+.group-card {
+    background-color: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 8px;
+    padding: 16px;
+    margin-top: 12px;
+}
+.group-name {
+    font-size: 1.1rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    margin: 0 0 8px 0;
+}
+.group-address {
+    font-size: 0.9rem;
+    color: var(--color-texto-secundario);
+    margin-bottom: 12px;
+}
+.group-address a {
+    color: var(--color-acento-inicio);
+    text-decoration: none;
+    font-weight: 600;
+}
+.group-address a:hover {
+    text-decoration: underline;
+}
+.group-schedule {
+    border-top: 1px dashed var(--color-borde);
+    padding-top: 12px;
+}
+.schedule-item {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.9rem;
+    padding: 4px 0;
+}
+.schedule-item strong {
+    color: var(--color-texto-principal);
+}
+.link-url {
+    display: block;
+    margin-top: 8px;
+    font-size: 0.85rem;
+    word-break: break-all;
+    color: var(--color-acento-fin);
+    font-weight: 600;
+}
+.nota-interna {
+    font-size: 0.8rem;
+    color: #e11d48;
+    font-weight: bold;
+    margin-top: 4px;
+}
+.location-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background-color: #f3f4f6;
+    color: var(--color-texto-secundario);
+    padding: 4px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+    transition: background-color 0.2s, color 0.2s;
+    margin-right: 8px;
+}
+.location-button:hover {
+    background-color: #e5e7eb;
+    color: var(--color-texto-principal);
+}
+.location-button svg {
+    width: 14px;
+    height: 14px;
+    fill: currentColor;
+}

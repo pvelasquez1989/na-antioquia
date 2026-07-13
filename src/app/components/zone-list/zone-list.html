@@ -1,0 +1,15 @@
+<section class="directory" style="padding-bottom: 20px;">
+  <!-- USAMOS filteredZones en lugar de zones -->
+  @for (zone of filteredZones; track zone.zoneName) {
+    <!-- Si hay algo escrito en searchTerm, forzamos [open]="true" -->
+    <details class="zone-accordion" [open]="searchTerm.length > 0">
+      <summary>{{ zone.zoneName }}</summary>
+      
+      <div class="groups-list">
+        @for (group of zone.groups; track group.name) {
+          <app-group-card [group]="group"></app-group-card>
+        }
+      </div>
+    </details>
+  }
+</section>
