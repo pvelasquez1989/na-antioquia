@@ -32,6 +32,7 @@ body {
 
 /* --- Mensaje de Ayuda --- */
 
+/* --- Mensaje de Ayuda --- */
 .helpline {
     background-color: #e0f2f7;
     border: 1px solid #b2ebf2;
@@ -42,10 +43,15 @@ body {
     font-size: 0.95rem;
     color: var(--color-texto-principal);
     font-weight: 500;
-    
-    /* NUEVO: Alineación perfecta para el ícono y el texto */
     display: flex;
     align-items: center;
     justify-content: center;
     gap: 10px;
+}
+
+/* NUEVO: Bloqueamos el tamaño del ícono para que no se deforme */
+.helpline svg {
+    flex-shrink: 0; /* Evita que el contenedor lo aplaste */
+    width: 22px;    /* Forzamos un tamaño fijo */
+    height: 22px;
 }
