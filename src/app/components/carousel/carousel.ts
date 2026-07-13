@@ -28,33 +28,21 @@ export class Carousel implements OnInit, OnDestroy {
 
   activeImages: CarouselImage[] = [];
   currentImageIndex = 0;
-  display = 'none';
-  opacity = 0;
   carouselInterval: any;
-  isPaused = false; // NUEVO: Estado de pausa
+  isPaused = false;
+  isVisible = false; 
 
-  get currentImage() {
-    return this.activeImages[this.currentImageIndex];
-  }
-
-  // NUEVO: Getter dinámico para el cursor
-  get currentCursor() {
-    if (this.isPaused) return 'grab';
-    return this.currentImage?.link ? 'pointer' : 'default';
-  }
+  get currentImage() { return this.activeImages[this.currentImageIndex]; }
+  get currentCursor() { return this.isPaused ? 'grab' : (this.currentImage?.link ? 'pointer' : 'default'); }
 
   ngOnInit() {
-    setTimeout(() => { this.startCarousel(); }, 15000);
+    setTimeout(() => { this.startCarousel(); }, 1000);
   }
 
-  ngOnDestroy() {
-    this.clearTimer();
-  }
+  ngOnDestroy() { this.clearTimer(); }
 
   @HostListener('document:keydown.escape')
-  onKeydownHandler() {
-    this.stopCarousel();
-  }
+  onKeydownHandler() { this.stopCarousel(); }
 
   startCarousel() {
     const today = new Date();
@@ -74,33 +62,27 @@ export class Carousel implements OnInit, OnDestroy {
     this.activeImages = scheduledImages.length > 0 ? scheduledImages : this.images.filter(img => !img.startDate && !img.endDate);
 
     if (this.activeImages.length > 0) {
-      this.display = 'flex';
-      setTimeout(() => { this.opacity = 1; }, 10);
+      this.isVisible = true; 
       this.resetCarouselInterval();
     }
   }
 
   stopCarousel() {
     this.clearTimer();
-    this.opacity = 0;
-    setTimeout(() => { this.display = 'none'; }, 200);
+    this.isVisible = false; 
   }
 
-  clearTimer() {
-    if (this.carouselInterval) clearInterval(this.carouselInterval);
-  }
+  clearTimer() { if (this.carouselInterval) clearInterval(this.carouselInterval); }
 
   resetCarouselInterval() {
     this.clearTimer();
-    // MODIFICADO: A 6 segundos y respeta la pausa
     if (this.activeImages.length > 1 && !this.isPaused) {
       this.carouselInterval = setInterval(() => this.showNextImage(), 6000);
     }
   }
 
-  // NUEVO: Funciones para pausar y reanudar
   pauseCarousel(event?: MouseEvent) {
-    if (event && event.button !== 0) return; // Solo clic izquierdo
+    if (event && event.button !== 0) return; 
     this.isPaused = true;
     this.clearTimer();
   }
@@ -112,12 +94,10 @@ export class Carousel implements OnInit, OnDestroy {
     }
   }
 
- showNextImage() {
-    // Si llegamos a la última imagen, regresamos a la primera (índice 0)
+  showNextImage() {
     if (this.currentImageIndex >= this.activeImages.length - 1) {
       this.currentImageIndex = 0; 
     } else {
-      // Si no, simplemente pasamos a la siguiente
       this.currentImageIndex++;
     }
   }
@@ -134,9 +114,7 @@ export class Carousel implements OnInit, OnDestroy {
 
   onImageClick(event: Event) {
     event.stopPropagation();
-    if (this.currentImage?.link) {
-      window.open(this.currentImage.link, '_blank');
-    }
+    if (this.currentImage?.link) { window.open(this.currentImage.link, '_blank'); }
   }
 
   onOverlayClick(event: Event) {

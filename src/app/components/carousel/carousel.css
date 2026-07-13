@@ -1,4 +1,6 @@
+/* --- Reemplaza solo la primera regla (.modal) con esto --- */
 .modal {
+    display: flex; /* ¡Esta es la línea mágica que faltaba! */
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -6,11 +8,12 @@
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0,0,0,0.7);
+    background-color: rgba(0,0,0,0.8);
     align-items: center;
     justify-content: center;
-    transition: opacity 0.3s ease-in-out;
+    animation: fadeIn 0.3s ease-in-out; /* Animación de entrada suave */
 }
+
 .modal-content {
     background-color: var(--color-tarjeta);
     padding: 20px;
@@ -62,4 +65,9 @@
 }
 .carousel-arrow.next {
     right: 5px;
+}
+/* Agrega esta pequeña animación al final de tu archivo css */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
 }
