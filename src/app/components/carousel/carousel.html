@@ -10,7 +10,9 @@
 
       @if (currentImage) {
         <img 
-          [src]="currentImage.src" 
+          [src]="currentImage.src"
+          (load)="onImageLoad()"
+          (error)="onImageError($event)" 
           alt="Evento de Narcóticos Anónimos" 
           (click)="onImageClick($event)"
           (mousedown)="pauseCarousel($event)"

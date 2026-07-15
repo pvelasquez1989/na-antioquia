@@ -1,45 +1,48 @@
-/* --- Reemplaza solo la primera regla (.modal) con esto --- */
+/* Reemplaza o edita estas clases en tu carousel.css */
+
 .modal {
-    display: flex; /* ¡Esta es la línea mágica que faltaba! */
-    position: fixed;
-    z-index: 1000;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgba(0,0,0,0.8);
-    align-items: center;
-    justify-content: center;
-    animation: fadeIn 0.3s ease-in-out; /* Animación de entrada suave */
+  position: fixed !important; /* Rompe el contenedor del header y se fija a la pantalla */
+  top: 0;
+  left: 0;
+  width: 100vw;              /* Ocupa el 100% del ancho de la pantalla */
+  height: 100vh;             /* Ocupa el 100% del alto de la pantalla */
+  background-color: rgba(0, 0, 0, 0.85) !important; /* Fondo oscuro muy visible */
+  z-index: 99999 !important; /* Se coloca por encima de absolutamente todo */
+  
+  /* Centrado perfecto para el contenido */
+  justify-content: center;
+  align-items: center;
 }
 
 .modal-content {
-    background-color: var(--color-tarjeta);
-    padding: 20px;
-    border-radius: 16px;
-    width: 90%;
-    max-width: 600px;
-    position: relative;
-    text-align: center;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+  position: relative;
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  max-width: 500px;         /* Ajusta el ancho máximo a tu gusto */
+  width: 90%;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
+
+/* Asegúrate de que las imágenes tengan un tamaño asignado para que no midan 0px */
 .modal-content img {
-    max-width: 100%;
-    height: auto;
-    max-height: 75vh;
-    border-radius: 8px;
+  max-width: 100%;
+  height: auto;
+  max-height: 70vh;
+  object-fit: contain;
+  border-radius: 6px;
 }
+
 .close-button {
-    color: #ec6739;
-    position: absolute;
-    top: 5px;
-    right: 15px;
-    font-size: 2.5rem;
-    font-weight: bold;
-    line-height: 1;
-    cursor: pointer;
-    transition: color 0.2s;
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 28px;
+  cursor: pointer;
+  color: #333;
 }
 .close-button:hover {
     color: var(--color-texto-principal);

@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ChangeDetectorRef } from '@angular/core';
 
 interface CarouselImage {
   src: string;
@@ -9,11 +9,22 @@ interface CarouselImage {
 
 @Component({
   selector: 'app-carousel',
-  imports: [],
+  standalone: true,
+  imports: [], // Corregido: un componente standalone no debe importarse a sí mismo
   templateUrl: './carousel.html',
-  styleUrl: './carousel.css'
+  styleUrls: ['./carousel.css']
 })
 export class Carousel implements OnInit, OnDestroy {
+  
+  // Inyectamos el detector de cambios en el constructor
+  constructor(private cdr: ChangeDetectorRef) {}
+
+  ngOnInit(): void {
+    setTimeout(() => {
+      this.startCarousel();
+    }, 1000);
+  }
+  
   images: CarouselImage[] = [
     { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16' }, 
     { src: 'Eventos/PostulacionOradoresConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16', link: 'https://forms.gle/z9padbCjDxyEWMrC8' },
@@ -35,8 +46,13 @@ export class Carousel implements OnInit, OnDestroy {
   get currentImage() { return this.activeImages[this.currentImageIndex]; }
   get currentCursor() { return this.isPaused ? 'grab' : (this.currentImage?.link ? 'pointer' : 'default'); }
 
-  ngOnInit() {
-    setTimeout(() => { this.startCarousel(); }, 1000);
+  onImageLoad() {
+    console.log('✅ Imagen cargada');
+  }
+
+  onImageError(event: Event) {
+    const img = event.target as HTMLImageElement;
+    console.error('❌ Error:', img.src);
   }
 
   ngOnDestroy() { this.clearTimer(); }
@@ -45,24 +61,31 @@ export class Carousel implements OnInit, OnDestroy {
   onKeydownHandler() { this.stopCarousel(); }
 
   startCarousel() {
-    const today = new Date();
-    today.setHours(0, 0, 0, 0);
+    console.log(new Date().toString());
 
-    const scheduledImages = this.images.filter(image => {
-      const startDate = image.startDate ? new Date(image.startDate + 'T00:00:00') : null;
-      const endDate = image.endDate ? new Date(image.endDate + 'T00:00:00') : null;
+    const today = new Date().toISOString().slice(0,10);
 
-      if (!startDate && !endDate) return false;
-      if (startDate && endDate) return today >= startDate && today <= endDate;
-      if (startDate) return today >= startDate;
-      if (endDate) return today <= endDate;
-      return false;
+    this.activeImages = this.images.filter(img => {
+      if (img.startDate && today < img.startDate) return false;
+      if (img.endDate && today > img.endDate) return false;
+      return true;
     });
 
-    this.activeImages = scheduledImages.length > 0 ? scheduledImages : this.images.filter(img => !img.startDate && !img.endDate);
+    console.log(this.activeImages);
+    console.log('activeImages:', this.activeImages.length);
+    console.log('currentImage:', this.currentImage);
+    console.log('isVisible antes:', this.isVisible);
 
     if (this.activeImages.length > 0) {
-      this.isVisible = true; 
+      this.currentImageIndex = 0;
+
+      // Usamos setTimeout para desfasar la ejecución y forzamos el ciclo de renderizado
+      setTimeout(() => {
+        this.isVisible = true;
+        this.cdr.detectChanges(); // OBLIGA a Angular a pintar el modal durante el refresh
+        console.log('isVisible después:', this.isVisible);
+      }, 0);
+
       this.resetCarouselInterval();
     }
   }
