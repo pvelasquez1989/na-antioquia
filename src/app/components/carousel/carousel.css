@@ -38,11 +38,16 @@
 
 .close-button {
   position: absolute;
-  top: 10px;
-  right: 15px;
-  font-size: 28px;
+  top: 0;             /* 👈 Lo pega completamente al borde superior */
+  right: 12px;        /* 👈 Lo alinea al borde derecho (ajústalo a 0 si lo quieres al ras) */
+  font-size: 56px;
+  line-height: 0.6;   /* 👈 ¡ESTA ES LA CLAVE! Elimina el espacio invisible que genera la fuente grande */
   cursor: pointer;
-  color: #333;
+  color: #ec6139;
+  
+  /* Opcional: Si notas que el área de clic se deforma, puedes añadir esto */
+  display: block;
+  height: 40px;       /* Controla la altura de la caja contenedora */
 }
 .close-button:hover {
     color: var(--color-texto-principal);

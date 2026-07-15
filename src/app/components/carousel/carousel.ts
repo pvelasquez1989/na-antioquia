@@ -10,19 +10,19 @@ interface CarouselImage {
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [], // Corregido: un componente standalone no debe importarse a sí mismo
+  imports: [], 
   templateUrl: './carousel.html',
   styleUrls: ['./carousel.css']
 })
 export class Carousel implements OnInit, OnDestroy {
   
-  // Inyectamos el detector de cambios en el constructor
   constructor(private cdr: ChangeDetectorRef) {}
 
   ngOnInit(): void {
+    // 1. CAMBIADO: De 1000ms (1 segundo) a 15000ms (15 segundos) para la apertura del modal
     setTimeout(() => {
       this.startCarousel();
-    }, 1000);
+    }, 15000); 
   }
   
   images: CarouselImage[] = [
@@ -62,7 +62,6 @@ export class Carousel implements OnInit, OnDestroy {
 
   startCarousel() {
     console.log(new Date().toString());
-
     const today = new Date().toISOString().slice(0,10);
 
     this.activeImages = this.images.filter(img => {
@@ -71,18 +70,12 @@ export class Carousel implements OnInit, OnDestroy {
       return true;
     });
 
-    console.log(this.activeImages);
-    console.log('activeImages:', this.activeImages.length);
-    console.log('currentImage:', this.currentImage);
-    console.log('isVisible antes:', this.isVisible);
-
     if (this.activeImages.length > 0) {
       this.currentImageIndex = 0;
 
-      // Usamos setTimeout para desfasar la ejecución y forzamos el ciclo de renderizado
       setTimeout(() => {
         this.isVisible = true;
-        this.cdr.detectChanges(); // OBLIGA a Angular a pintar el modal durante el refresh
+        this.cdr.detectChanges(); 
         console.log('isVisible después:', this.isVisible);
       }, 0);
 
@@ -123,6 +116,8 @@ export class Carousel implements OnInit, OnDestroy {
     } else {
       this.currentImageIndex++;
     }
+    // 2. AÑADIDO: Forzamos a Angular a refrescar la vista cuando el temporizador cambia de imagen automáticamente
+    this.cdr.detectChanges(); 
   }
 
   onNextClick() {
@@ -132,6 +127,8 @@ export class Carousel implements OnInit, OnDestroy {
 
   onPrevClick() {
     this.currentImageIndex = (this.currentImageIndex - 1 + this.activeImages.length) % this.activeImages.length;
+    // 3. AÑADIDO: Forzamos el refresco también al usar la flecha de atrás manualmente
+    this.cdr.detectChanges(); 
     this.resetCarouselInterval();
   }
 
