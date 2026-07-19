@@ -2,8 +2,17 @@ import { Component } from '@angular/core';
 
 @Component({
   selector: 'app-footer',
-  imports: [],
+  standalone: true,
   templateUrl: './footer.html',
-  styleUrl: './footer.css',
+  styleUrls: ['./footer.css']
 })
-export class Footer {}
+export class Footer {
+
+  probarAlert() {
+    alert('El toque llegó al footer');
+  }
+
+  probarNavegacion() {
+    window.open('https://www.nacolombia.org', '_blank');
+  }
+}
