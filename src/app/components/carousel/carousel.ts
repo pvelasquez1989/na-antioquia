@@ -31,7 +31,6 @@ export class Carousel implements OnInit, OnDestroy {
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
     { src: 'Eventos/AniversarioTransformacion.jpeg', startDate: '2026-06-23', endDate: '2026-07-19' },
     { src: 'Eventos/TorneoTransformacionFutbol.jpeg', startDate: '2026-06-23', endDate: '2026-07-19' },
-    { src: 'Eventos/GrupoLaunidad.jpeg', startDate: '2026-06-17', endDate: '2026-07-18' },
     { src: 'Eventos/AniversariogrupoElCamino.jpeg', startDate: '2026-07-07', endDate: '2026-09-05' },
     { src: 'Eventos/MaratonicaLosLazos.jpeg', startDate: '2026-07-07', endDate: '2026-12-31' },
     { src: 'Eventos/MaratonicaGrupoVida.jpeg', startDate: '2026-07-08', endDate: '2026-12-31' },
