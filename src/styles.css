@@ -1,5 +1,8 @@
 /* You can add global styles to this file, and also import other style files */
-/* --- Variables de Color --- */
+
+/* ==========================
+   Variables de Color
+========================== */
 :root {
     --color-fondo: #f0f2f5;
     --color-tarjeta: #ffffff;
@@ -10,7 +13,9 @@
     --color-acento-fin: #003087;
 }
 
-/* --- Estilos Globales --- */
+/* ==========================
+   Estilos Globales
+========================== */
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
@@ -20,19 +25,27 @@ body {
     line-height: 1.6;
 }
 
-/* --- Contenedor Principal --- */
+/* ==========================
+   Contenedor Principal
+========================== */
 .container {
     max-width: 800px;
     margin: 0 auto;
     background-color: var(--color-tarjeta);
     border-radius: 16px;
     padding: 24px;
+
+    /* Espacio para que el footer no quede pegado abajo */
+    padding-bottom: 120px;
+
     box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+
+    overflow: visible;
 }
 
-/* --- Mensaje de Ayuda --- */
-
-/* --- Mensaje de Ayuda --- */
+/* ==========================
+   Mensaje de Ayuda
+========================== */
 .helpline {
     background-color: #e0f2f7;
     border: 1px solid #b2ebf2;
@@ -49,24 +62,26 @@ body {
     gap: 10px;
 }
 
-/* NUEVO: Bloqueamos el tamaño del ícono para que no se deforme */
 .helpline svg {
-    flex-shrink: 0; /* Evita que el contenedor lo aplaste */
-    width: 22px;    /* Forzamos un tamaño fijo */
+    flex-shrink: 0;
+    width: 22px;
     height: 22px;
 }
+
+/* ==========================
+   Footer
+========================== */
+
 app-footer {
     display: block;
     position: relative;
-    z-index: 999999 !important;
-    background: white;
+    z-index: 100;
 }
 
 .page-footer {
     position: relative;
-    z-index: 999999 !important;
-    background: white;
-}
-.container {
-    overflow: visible !important;
+    z-index: 100;
+    background: transparent;
+    margin-top: 30px;
+    padding: 40px 20px 60px;
 }
