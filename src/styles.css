@@ -55,3 +55,18 @@ body {
     width: 22px;    /* Forzamos un tamaño fijo */
     height: 22px;
 }
+app-footer {
+    display: block;
+    position: relative;
+    z-index: 999999 !important;
+    background: white;
+}
+
+.page-footer {
+    position: relative;
+    z-index: 999999 !important;
+    background: white;
+}
+.container {
+    overflow: visible !important;
+}
