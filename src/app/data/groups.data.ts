@@ -64,7 +64,7 @@ export const NA_ZONES: Zone[] = [
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Transversal+78A+%2388-06+Medellin',
         address: 'Tv 78A #88-06 Robledo Bello Horiz. Salón Social villa de la Candelaria.',
         schedules: [
-          { days: 'Miércoles:', hours: '7:15 P.M.' },
+          { days: 'Miércoles:', hours: '7:00 A.M.' },
           { days: 'Viernes:', hours: '7:15 P.M.' }
         ]
       },
