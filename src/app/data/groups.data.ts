@@ -274,7 +274,7 @@ export const NA_ZONES: Zone[] = [
     ]
   },
   {
-    zoneName: 'BELEN / GUAYABAL / ENVIGADO',
+    zoneName: 'BELEN / GUAYABAL / ENVIGADO / SABANETA',
     groups: [
       {
         name: 'Transformación',
@@ -342,7 +342,7 @@ export const NA_ZONES: Zone[] = [
     ]
   },
   {
-    zoneName: 'ITAGÜÍ / MUNICIPIOS / ORIENTE',
+    zoneName: 'ITAGÜÍ / LA ESTRELLA / S.A PRADO / CALDAS / ORIENTE ANTIOQUEÑO',
     groups: [
       {
         name: 'El Deseo',
