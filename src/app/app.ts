@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, ViewChild } from '@angular/core';
 import { Header } from './components/header/header';
 import { Search } from './components/search/search';
 import { ZoneList } from './components/zone-list/zone-list';
@@ -20,11 +20,16 @@ import { Footer } from './components/footer/footer';
   styleUrl: './app.css'
 })
 export class App {
+  @ViewChild(Carousel) carousel?: Carousel;
   // Aquí guardamos lo que el usuario escriba
   currentSearchTerm: string = '';
 
   // Esta función actualizará la variable
   updateSearch(term: string) {
     this.currentSearchTerm = term;
+  }
+
+  openEvents() {
+    this.carousel?.startCarousel();
   }
 }

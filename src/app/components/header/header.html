@@ -1,7 +1,80 @@
 <header class="profile-header">
     <img class="profile-logo" src="LogoAntioquia.jpeg" alt="Logo de Narcóticos Anónimos Antioquia">
     <h1 class="profile-title">ÁREA DE MEDELLÍN Y SUR DE ANTIOQUIA - Directorio de Grupos</h1>
-    <!-- Dentro de tu header.html -->
+    <nav class="quick-links" aria-label="Accesos a información y anuncios">
+        <a class="quick-link" href="#informacion-publica" aria-label="Escuchar Información al Público" (click)="openPublicInfo($event)">
+            <span class="quick-link__circle quick-link__circle--ip" aria-hidden="true">IP</span>
+            <span>Información<br>al Público</span>
+        </a>
+
+        <a class="quick-link" href="#hei" aria-label="Ver información de Hospitales e Instituciones" (click)="openInstitutions($event)">
+            <span class="quick-link__circle quick-link__circle--hei" aria-hidden="true">HeI</span>
+            <span>Hospitales e<br>Instituciones</span>
+        </a>
+
+        <a class="quick-link" href="#eventos" aria-label="Ver eventos de Narcóticos Anónimos" (click)="openEvents($event)">
+            <span class="quick-link__circle quick-link__circle--events" aria-hidden="true">
+                <img src="LogoAntioquia.jpeg" alt="">
+            </span>
+            <span>Eventos</span>
+        </a>
+    </nav>
 
 </header>
 
+<section class="audio-reel-backdrop" [hidden]="!isPublicInfoOpen" role="dialog" aria-modal="true" aria-labelledby="audio-reel-title" (click)="closePublicInfo()">
+        <article class="audio-reel" role="button" tabindex="0" aria-label="Toca la tarjeta para escuchar el siguiente audio" (click)="nextAudio($event)" (keydown.enter)="nextAudio($event)" (keydown.space)="nextAudio($event)">
+            <button class="audio-reel__close" type="button" aria-label="Cerrar reproductor" (click)="$event.stopPropagation(); closePublicInfo()">×</button>
+            <div class="audio-reel__progress" aria-label="{{ currentAudioIndex + 1 }} de {{ audioClips.length }} audios">
+                @for (clip of audioClips; track clip.src; let index = $index) {
+                    <span class="audio-reel__progress-item" [class.audio-reel__progress-item--active]="index === currentAudioIndex"></span>
+                }
+            </div>
+            <div class="audio-reel__badge" aria-hidden="true">IP</div>
+            <p class="audio-reel__eyebrow">Narcóticos Anónimos Antioquia</p>
+            <h2 id="audio-reel-title">{{ currentAudio.title }}</h2>
+            <p class="audio-reel__description">{{ currentAudio.description }}</p>
+            <p class="audio-reel__counter">Audio {{ currentAudioIndex + 1 }} de {{ audioClips.length }} · Toca la tarjeta para cambiar</p>
+            <audio #publicInfoAudio [src]="currentAudio.src" preload="none" (play)="setAudioPlaying(true)" (pause)="setAudioPlaying(false)" (ended)="setAudioPlaying(false)">
+                Tu navegador no permite reproducir este audio.
+            </audio>
+            <div class="audio-reel__controls" aria-label="Controles del reproductor">
+                <button class="audio-reel__control" type="button" aria-label="Retroceder 10 segundos" (click)="$event.stopPropagation(); seekAudio(-10)">
+                    <span aria-hidden="true">↶</span><small>10 s</small>
+                </button>
+                <button class="audio-reel__toggle" type="button" (click)="$event.stopPropagation(); toggleAudio()" [attr.aria-label]="isAudioPlaying ? 'Pausar audio' : 'Reproducir audio'">
+                    <span class="audio-reel__toggle-icon" aria-hidden="true">{{ isAudioPlaying ? 'Ⅱ' : '▶' }}</span>
+                    {{ isAudioPlaying ? 'Pausar' : 'Reproducir' }}
+                </button>
+                <button class="audio-reel__control" type="button" aria-label="Adelantar 10 segundos" (click)="$event.stopPropagation(); seekAudio(10)">
+                    <span aria-hidden="true">↷</span><small>10 s</small>
+                </button>
+            </div>
+        </article>
+</section>
+
+<section class="info-notice-backdrop" [hidden]="!isInstitutionsOpen" role="dialog" aria-modal="true" aria-labelledby="institutions-title" (click)="closeInstitutions()">
+    <article class="info-notice" (click)="$event.stopPropagation()">
+        <button type="button" class="info-notice__close" aria-label="Cerrar aviso" (click)="closeInstitutions()">×</button>
+        <div class="info-notice__badge" aria-hidden="true">HeI</div>
+        <h2 id="institutions-title">Próximamente</h2>
+        <p>Próximamente publicaremos aquí la información sobre los paneles que realizamos en Narcóticos Anónimos.</p>
+    </article>
+</section>
+
+<section class="events-backdrop" [hidden]="!isEventsOpen" role="dialog" aria-modal="true" aria-labelledby="events-title" (click)="closeEvents()">
+    <article class="events-gallery" (click)="$event.stopPropagation()">
+        <button class="events-gallery__close" type="button" aria-label="Cerrar eventos" (click)="closeEvents()">×</button>
+        <p class="events-gallery__eyebrow">Narcóticos Anónimos Antioquia</p>
+        <h2 id="events-title">Eventos</h2>
+        <div class="events-gallery__image-wrap">
+            <img [src]="currentEvent.src" [alt]="currentEvent.title">
+        </div>
+        <p class="events-gallery__title">{{ currentEvent.title }}</p>
+        <div class="events-gallery__navigation">
+            <button type="button" aria-label="Evento anterior" (click)="previousEvent($event)">← Anterior</button>
+            <span>{{ currentEventIndex + 1 }} de {{ eventImages.length }}</span>
+            <button type="button" aria-label="Siguiente evento" (click)="nextEvent($event)">Siguiente →</button>
+        </div>
+    </article>
+</section>

@@ -1,6 +1,11 @@
 <!-- Usamos [style.display] para forzar al navegador a renderizarlo sí o sí -->
 <div class="modal" [style.display]="isVisible ? 'flex' : 'none'" (click)="onOverlayClick($event)">
   <div class="modal-content" (click)="$event.stopPropagation()">
+      <div class="carousel-progress" aria-label="{{ currentImageIndex + 1 }} de {{ activeImages.length }} eventos">
+        @for (image of activeImages; track image.src; let index = $index) {
+          <span class="carousel-progress__item" [class.carousel-progress__item--active]="index === currentImageIndex"></span>
+        }
+      </div>
       <span class="close-button" title="Cerrar" (click)="stopCarousel()">&times;</span>
       
       @if (activeImages.length > 1) {

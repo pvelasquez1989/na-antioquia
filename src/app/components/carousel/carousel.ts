@@ -1,4 +1,4 @@
-import { Component, OnInit, OnDestroy, HostListener, ChangeDetectorRef } from '@angular/core';
+import { Component, OnDestroy, HostListener, ChangeDetectorRef } from '@angular/core';
 
 interface CarouselImage {
   src: string;
@@ -14,17 +14,10 @@ interface CarouselImage {
   templateUrl: './carousel.html',
   styleUrls: ['./carousel.css']
 })
-export class Carousel implements OnInit, OnDestroy {
+export class Carousel implements OnDestroy {
   
   constructor(private cdr: ChangeDetectorRef) {}
 
-  ngOnInit(): void {
-    // 1. CAMBIADO: De 1000ms (1 segundo) a 15000ms (15 segundos) para la apertura del modal
-    setTimeout(() => {
-      this.startCarousel();
-    }, 15000); 
-  }
-  
   images: CarouselImage[] = [
     { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16' }, 
     { src: 'Eventos/PostulacionOradoresConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16', link: 'https://forms.gle/z9padbCjDxyEWMrC8' },
@@ -64,13 +57,7 @@ export class Carousel implements OnInit, OnDestroy {
 
   startCarousel() {
     console.log(new Date().toString());
-    const today = new Date().toISOString().slice(0,10);
-
-    this.activeImages = this.images.filter(img => {
-      if (img.startDate && today < img.startDate) return false;
-      if (img.endDate && today > img.endDate) return false;
-      return true;
-    });
+    this.activeImages = this.images;
 
     if (this.activeImages.length > 0) {
       this.currentImageIndex = 0;
