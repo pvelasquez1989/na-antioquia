@@ -163,6 +163,7 @@
     right: 16px;
     top: 16px;
     width: 38px;
+    z-index: 2;
 }
 
 .audio-reel__progress {
@@ -233,7 +234,7 @@
 .audio-reel--flyer {
     max-width: min(430px, calc(100vw - 40px));
     min-height: 0;
-    padding: 46px 0 0;
+    padding: 56px 10px 10px;
 }
 
 .audio-reel--flyer .audio-reel__flyer {
