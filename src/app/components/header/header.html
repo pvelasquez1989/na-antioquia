@@ -23,22 +23,30 @@
 </header>
 
 <section class="audio-reel-backdrop" [hidden]="!isPublicInfoOpen" role="dialog" aria-modal="true" aria-labelledby="audio-reel-title" (click)="closePublicInfo()">
-        <article class="audio-reel" role="button" tabindex="0" [attr.aria-label]="language.t('tapCard')" (click)="nextAudio($event)" (keydown.enter)="nextAudio($event)" (keydown.space)="nextAudio($event)">
+        <article class="audio-reel" [class.audio-reel--flyer]="currentPublicInfoItem.type === 'image'" role="button" tabindex="0" [attr.aria-label]="language.t('tapCard')" (click)="nextAudio($event)" (keydown.enter)="nextAudio($event)" (keydown.space)="nextAudio($event)">
             <button class="audio-reel__close" type="button" [attr.aria-label]="language.t('closePlayer')" (click)="$event.stopPropagation(); closePublicInfo()">×</button>
-            <div class="audio-reel__progress" [attr.aria-label]="language.format('audioProgress', { current: currentAudioIndex + 1, total: audioClips.length })">
-                @for (clip of audioClips; track clip.src; let index = $index) {
+            @if (currentPublicInfoItem.type === 'image') {
+                <div class="audio-reel__progress" [attr.aria-label]="language.format('audioProgress', { current: currentAudioIndex + 1, total: publicInfoItems.length })">
+                    @for (item of publicInfoItems; track item.src; let index = $index) {
+                        <span class="audio-reel__progress-item" [class.audio-reel__progress-item--active]="index === currentAudioIndex"></span>
+                    }
+                </div>
+                <img class="audio-reel__flyer" [src]="currentPublicInfoItem.src" [alt]="language.t(currentPublicInfoItem.titleKey)">
+            } @else {
+            <div class="audio-reel__progress" [attr.aria-label]="language.format('audioProgress', { current: currentAudioIndex + 1, total: publicInfoItems.length })">
+                @for (item of publicInfoItems; track item.src; let index = $index) {
                     <span class="audio-reel__progress-item" [class.audio-reel__progress-item--active]="index === currentAudioIndex"></span>
                 }
             </div>
             <div class="audio-reel__badge" aria-hidden="true">IP</div>
             <p class="audio-reel__eyebrow">{{ language.t('footerArea') }}</p>
-            <h2 id="audio-reel-title">{{ language.t(currentAudio.titleKey) }}</h2>
-            <p class="audio-reel__description">{{ language.t(currentAudio.descriptionKey) }}</p>
-            <p class="audio-reel__counter">{{ language.format('audioCounter', { current: currentAudioIndex + 1, total: audioClips.length }) }}</p>
-            <audio #publicInfoAudio [src]="currentAudio.src" preload="none" (play)="setAudioPlaying(true)" (pause)="setAudioPlaying(false)" (ended)="setAudioPlaying(false)">
-                {{ language.t('browserAudioUnsupported') }}
-            </audio>
-            <div class="audio-reel__controls" [attr.aria-label]="language.t('playerControls')">
+            <h2 id="audio-reel-title">{{ language.t(currentPublicInfoItem.titleKey) }}</h2>
+            <p class="audio-reel__description">{{ language.t(currentPublicInfoItem.descriptionKey) }}</p>
+            <p class="audio-reel__counter">{{ language.format('audioCounter', { current: currentAudioIndex + 1, total: publicInfoItems.length }) }}</p>
+                <audio #publicInfoAudio [src]="currentPublicInfoItem.src" preload="none" (play)="setAudioPlaying(true)" (pause)="setAudioPlaying(false)" (ended)="setAudioPlaying(false)">
+                    {{ language.t('browserAudioUnsupported') }}
+                </audio>
+                <div class="audio-reel__controls" [attr.aria-label]="language.t('playerControls')">
                 <button class="audio-reel__control" type="button" [attr.aria-label]="language.t('rewind')" (click)="$event.stopPropagation(); seekAudio(-10)">
                     <span aria-hidden="true">↶</span><small>10 s</small>
                 </button>
@@ -49,7 +57,8 @@
                 <button class="audio-reel__control" type="button" [attr.aria-label]="language.t('forward')" (click)="$event.stopPropagation(); seekAudio(10)">
                     <span aria-hidden="true">↷</span><small>10 s</small>
                 </button>
-            </div>
+                </div>
+            }
         </article>
 </section>
 

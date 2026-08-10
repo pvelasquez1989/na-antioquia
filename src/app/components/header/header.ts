@@ -13,13 +13,21 @@ export class Header {
   @ViewChild('publicInfoAudio') publicInfoAudio?: ElementRef<HTMLAudioElement>;
   @Output() eventsRequested = new EventEmitter<void>();
 
-  readonly audioClips = [
+  readonly publicInfoItems = [
     {
+      type: 'image' as const,
+      titleKey: 'serveInIpTitle' as const,
+      descriptionKey: 'serveInIpDescription' as const,
+      src: 'Eventos/InvitacionServirenIP.jpeg',
+    },
+    {
+      type: 'audio' as const,
       titleKey: 'publicInfoTitle' as const,
       descriptionKey: 'publicInfoDescription' as const,
       src: 'audios/informacion-publica-03-agosto-2026.mp3',
     },
     {
+      type: 'audio' as const,
       titleKey: 'naSpotTitle' as const,
       descriptionKey: 'naSpotDescription' as const,
       src: 'audios/CUÑA-ANTIOQUIA.mp3',
@@ -47,8 +55,8 @@ export class Header {
   currentAudioIndex = 0;
   currentEventIndex = 0;
 
-  get currentAudio() {
-    return this.audioClips[this.currentAudioIndex];
+  get currentPublicInfoItem() {
+    return this.publicInfoItems[this.currentAudioIndex];
   }
 
   get currentEvent() {
@@ -57,6 +65,7 @@ export class Header {
 
   openPublicInfo(event: Event) {
     event.preventDefault();
+    this.currentAudioIndex = 0;
     this.isPublicInfoOpen = true;
   }
 
@@ -113,13 +122,14 @@ export class Header {
 
   nextAudio(event?: Event) {
     event?.stopPropagation();
-    this.currentAudioIndex = (this.currentAudioIndex + 1) % this.audioClips.length;
+    this.publicInfoAudio?.nativeElement.pause();
+    this.currentAudioIndex = (this.currentAudioIndex + 1) % this.publicInfoItems.length;
     const audio = this.publicInfoAudio?.nativeElement;
-    if (!audio) {
+    if (!audio || this.currentPublicInfoItem.type !== 'audio') {
       return;
     }
 
-    audio.src = this.currentAudio.src;
+    audio.src = this.currentPublicInfoItem.src;
     audio.load();
     this.playAudio();
   }
