@@ -25,7 +25,6 @@ export class Header {
       titleKey: 'serveInIpTitle' as const,
       descriptionKey: 'serveInIpDescription' as const,
       src: 'Eventos/comiteRelacionesPublicas.jpeg',
-      link: 'https://meet.google.com/gcm-wznp-itm',
     },
     {
       type: 'audio' as const,
