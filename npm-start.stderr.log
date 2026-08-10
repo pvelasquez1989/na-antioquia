@@ -1,0 +1,456 @@
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'.
+  Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:54:
+[37m      35 │             <h2 id="audio-reel-title">{{ currentAudio.[32mtitle[37m }}</h2>
+         ╵                                                       [32m~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'. Did you mean 'descriptionKey'?
+  Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:63:
+[37m      36 │ ...class="audio-reel__description">{{ currentAudio.[32mdescription[37m }}</p>
+         ╵                                                    [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'.
+  Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:54:
+[37m      35 │             <h2 id="audio-reel-title">{{ currentAudio.[32mtitle[37m }}</h2>
+         ╵                                                       [32m~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'. Did you mean 'descriptionKey'?
+  Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:63:
+[37m      36 │ ...class="audio-reel__description">{{ currentAudio.[32mdescription[37m }}</p>
+         ╵                                                    [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'.
+  Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:54:
+[37m      35 │             <h2 id="audio-reel-title">{{ currentAudio.[32mtitle[37m }}</h2>
+         ╵                                                       [32m~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'. Did you mean 'descriptionKey'?
+  Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:63:
+[37m      36 │ ...class="audio-reel__description">{{ currentAudio.[32mdescription[37m }}</p>
+         ╵                                                    [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'.
+  Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:54:
+[37m      35 │             <h2 id="audio-reel-title">{{ currentAudio.[32mtitle[37m }}</h2>
+         ╵                                                       [32m~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'. Did you mean 'descriptionKey'?
+  Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:63:
+[37m      36 │ ...class="audio-reel__description">{{ currentAudio.[32mdescription[37m }}</p>
+         ╵                                                    [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'.
+  Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:54:
+[37m      35 │             <h2 id="audio-reel-title">{{ currentAudio.[32mtitle[37m }}</h2>
+         ╵                                                       [32m~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'. Did you mean 'descriptionKey'?
+  Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:63:
+[37m      36 │ ...class="audio-reel__description">{{ currentAudio.[32mdescription[37m }}</p>
+         ╵                                                    [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'.
+  Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:54:
+[37m      35 │             <h2 id="audio-reel-title">{{ currentAudio.[32mtitle[37m }}</h2>
+         ╵                                                       [32m~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'. Did you mean 'descriptionKey'?
+  Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:63:
+[37m      36 │ ...class="audio-reel__description">{{ currentAudio.[32mdescription[37m }}</p>
+         ╵                                                    [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'.
+  Property 'title' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:54:
+[37m      35 │             <h2 id="audio-reel-title">{{ currentAudio.[32mtitle[37m }}</h2>
+         ╵                                                       [32m~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2551: Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; } | { titleKey: "naSpotTitle"; descriptionKey: "naSpotDescription"; src: string; }'. Did you mean 'descriptionKey'?
+  Property 'description' does not exist on type '{ titleKey: "publicInfoTitle"; descriptionKey: "publicInfoDescription"; src: string; }'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:63:
+[37m      36 │ ...class="audio-reel__description">{{ currentAudio.[32mdescription[37m }}</p>
+         ╵                                                    [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'onVideoPlay' does not exist on type 'Carousel'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/carousel/carousel.html:17:63:
+[37m      17 │ ...reload="metadata" (play)="[32monVideoPlay[37m($event)" (ended)="resumeC...
+         ╵                              [32m~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Carousel.
+
+    src/app/components/carousel/carousel.ts:16:15:
+[37m      16 │   templateUrl: [32m'./carousel.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'prepareVideoAudio' does not exist on type 'Carousel'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/carousel/carousel.html:17:89:
+[37m      17 │ ...ata" (loadedmetadata)="[32mprepareVideoAudio[37m($event)" (play)="onVid...
+         ╵                           [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Carousel.
+
+    src/app/components/carousel/carousel.ts:16:15:
+[37m      16 │   templateUrl: [32m'./carousel.html'[37m,
+         ╵                [32m~~~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m

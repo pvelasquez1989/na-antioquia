@@ -6,6 +6,7 @@ interface CarouselImage {
   startDate?: string;
   endDate?: string;
   link?: string;
+  mediaType?: 'image' | 'video';
 }
 
 @Component({
@@ -21,6 +22,8 @@ export class Carousel implements OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   images: CarouselImage[] = [
+    { src: 'Eventos/EncuentroServidores.jpeg', startDate: '2026-08-09', endDate: '2026-09-13' },
+    { src: 'Eventos/VideoEncuentroServidores.mp4', mediaType: 'video', startDate: '2026-08-09', endDate: '2026-09-13' },
     { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16' }, 
     { src: 'Eventos/PostulacionOradoresConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16', link: 'https://forms.gle/z9padbCjDxyEWMrC8' },
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
@@ -41,6 +44,7 @@ export class Carousel implements OnDestroy {
   isVisible = false; 
 
   get currentImage() { return this.activeImages[this.currentImageIndex]; }
+  get currentMediaIsVideo() { return this.currentImage?.mediaType === 'video'; }
   get currentCursor() { return this.isPaused ? 'grab' : (this.currentImage?.link ? 'pointer' : 'default'); }
 
   onImageLoad() {
@@ -52,6 +56,20 @@ export class Carousel implements OnDestroy {
     console.error('❌ Error:', img.src);
   }
 
+  onVideoPlay(event: Event) {
+    const video = event.target as HTMLVideoElement;
+    this.prepareVideoAudio(event);
+    this.pauseCarousel();
+  }
+
+  prepareVideoAudio(event: Event) {
+    const video = event.target as HTMLVideoElement;
+    video.muted = false;
+    video.defaultMuted = false;
+    video.removeAttribute('muted');
+    video.volume = 1;
+  }
+
   ngOnDestroy() { this.clearTimer(); }
 
   @HostListener('document:keydown.escape')
@@ -59,7 +77,7 @@ export class Carousel implements OnDestroy {
 
   startCarousel() {
     console.log(new Date().toString());
-    this.activeImages = this.images;
+    this.activeImages = this.images.filter(image => this.isScheduledForToday(image));
 
     if (this.activeImages.length > 0) {
       this.currentImageIndex = 0;
@@ -72,6 +90,12 @@ export class Carousel implements OnDestroy {
 
       this.resetCarouselInterval();
     }
+  }
+
+  private isScheduledForToday(image: CarouselImage): boolean {
+    const today = new Date();
+    const todayKey = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    return (!image.startDate || image.startDate <= todayKey) && (!image.endDate || image.endDate >= todayKey);
   }
 
   stopCarousel() {

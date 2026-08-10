@@ -48,7 +48,8 @@
 }
 
 /* Asegúrate de que las imágenes tengan un tamaño asignado para que no midan 0px */
-.modal-content img {
+.modal-content img,
+.modal-content video {
   max-width: 100%;
   height: auto;
   max-height: 70vh;

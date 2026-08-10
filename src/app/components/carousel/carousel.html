@@ -13,7 +13,12 @@
         <span class="carousel-arrow next" [title]="language.t('next')" (click)="onNextClick()">&#10095;</span>
       }
 
-      @if (currentImage) {
+      @if (currentImage && currentMediaIsVideo) {
+        <video controls playsinline [muted]="false" preload="metadata" (loadedmetadata)="prepareVideoAudio($event)" (play)="onVideoPlay($event)" (ended)="resumeCarousel()">
+          <source [src]="currentImage.src" type="video/mp4">
+          Your browser does not support video playback.
+        </video>
+      } @else if (currentImage) {
         <img 
           [src]="currentImage.src"
           (load)="onImageLoad()"
