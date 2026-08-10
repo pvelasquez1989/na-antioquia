@@ -25,6 +25,7 @@ export class Header {
       titleKey: 'serveInIpTitle' as const,
       descriptionKey: 'serveInIpDescription' as const,
       src: 'Eventos/comiteRelacionesPublicas.jpeg',
+      link: 'https://meet.google.com/gcm-wznp-itm',
     },
     {
       type: 'audio' as const,
@@ -130,24 +131,20 @@ export class Header {
     event?.stopPropagation();
     this.publicInfoAudio?.nativeElement.pause();
     this.currentAudioIndex = (this.currentAudioIndex + 1) % this.publicInfoItems.length;
-    const audio = this.publicInfoAudio?.nativeElement;
-    if (!audio || this.currentPublicInfoItem.type !== 'audio') {
+
+    if (this.currentPublicInfoItem.type !== 'audio') {
       return;
     }
 
-    audio.src = this.currentPublicInfoItem.src;
-    audio.load();
-    this.playAudio();
-  }
-
-  handlePublicInfoClick(event: Event) {
-    if (this.currentPublicInfoItem.link) {
-      event.stopPropagation();
-      window.open(this.currentPublicInfoItem.link, '_blank', 'noopener,noreferrer');
-      return;
-    }
-
-    this.nextAudio(event);
+    // Aplazar para permitir que la vista se actualice y el elemento <audio> esté disponible.
+    setTimeout(() => {
+      const audio = this.publicInfoAudio?.nativeElement;
+      if (audio) {
+        audio.src = this.currentPublicInfoItem.src;
+        audio.load();
+        this.playAudio();
+      }
+    });
   }
 
   setAudioPlaying(isPlaying: boolean) {
