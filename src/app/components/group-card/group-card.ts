@@ -1,5 +1,6 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { Group } from '../../data/groups.data';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-group-card',
@@ -8,6 +9,7 @@ import { Group } from '../../data/groups.data';
   styleUrl: './group-card.css'
 })
 export class GroupCard {
+  readonly language = inject(LanguageService);
   // @Input() le dice a Angular que este componente recibirá datos desde afuera
   @Input() group!: Group;
 }

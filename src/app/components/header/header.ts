@@ -1,4 +1,5 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular/core';
+import { Component, ElementRef, EventEmitter, Output, ViewChild, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 
 @Component({
@@ -8,18 +9,19 @@ import { Component, ElementRef, EventEmitter, Output, ViewChild } from '@angular
   styleUrl: './header.css',
 })
 export class Header {
+  readonly language = inject(LanguageService);
   @ViewChild('publicInfoAudio') publicInfoAudio?: ElementRef<HTMLAudioElement>;
   @Output() eventsRequested = new EventEmitter<void>();
 
   readonly audioClips = [
     {
-      title: 'Información al Público',
-      description: 'Escucha el mensaje informativo en Emisoras Radiales.',
+      titleKey: 'publicInfoTitle' as const,
+      descriptionKey: 'publicInfoDescription' as const,
       src: 'audios/informacion-publica-03-agosto-2026.mp3',
     },
     {
-      title: 'Cuña Antioquia',
-      description: 'Escucha nuestra cuña informativa de Narcóticos Anónimos Antioquia.',
+      titleKey: 'naSpotTitle' as const,
+      descriptionKey: 'naSpotDescription' as const,
       src: 'audios/CUÑA-ANTIOQUIA.mp3',
     },
   ];

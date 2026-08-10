@@ -1,4 +1,5 @@
-import { Component, EventEmitter, Output } from '@angular/core';
+import { Component, EventEmitter, Output, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-search',
@@ -7,6 +8,7 @@ import { Component, EventEmitter, Output } from '@angular/core';
   styleUrl: './search.css'
 })
 export class Search {
+  readonly language = inject(LanguageService);
   // EventEmitter permite enviar información "hacia afuera" del componente
   @Output() searchChanged = new EventEmitter<string>();
 

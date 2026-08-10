@@ -1,16 +1,16 @@
 <!-- Usamos [style.display] para forzar al navegador a renderizarlo sí o sí -->
 <div class="modal" [style.display]="isVisible ? 'flex' : 'none'" (click)="onOverlayClick($event)">
   <div class="modal-content" (click)="$event.stopPropagation()">
-      <div class="carousel-progress" aria-label="{{ currentImageIndex + 1 }} de {{ activeImages.length }} eventos">
+      <div class="carousel-progress" [attr.aria-label]="language.format('eventCounter', { current: currentImageIndex + 1, total: activeImages.length })">
         @for (image of activeImages; track image.src; let index = $index) {
           <span class="carousel-progress__item" [class.carousel-progress__item--active]="index === currentImageIndex"></span>
         }
       </div>
-      <span class="close-button" title="Cerrar" (click)="stopCarousel()">&times;</span>
+      <span class="close-button" [title]="language.t('close')" (click)="stopCarousel()">&times;</span>
       
       @if (activeImages.length > 1) {
-        <span class="carousel-arrow prev" title="Anterior" (click)="onPrevClick()">&#10094;</span>
-        <span class="carousel-arrow next" title="Siguiente" (click)="onNextClick()">&#10095;</span>
+        <span class="carousel-arrow prev" [title]="language.t('previous')" (click)="onPrevClick()">&#10094;</span>
+        <span class="carousel-arrow next" [title]="language.t('next')" (click)="onNextClick()">&#10095;</span>
       }
 
       @if (currentImage) {
@@ -18,7 +18,7 @@
           [src]="currentImage.src"
           (load)="onImageLoad()"
           (error)="onImageError($event)" 
-          alt="Evento de Narcóticos Anónimos" 
+          [alt]="language.t('eventAlt')"
           (click)="onImageClick($event)"
           (mousedown)="pauseCarousel($event)"
           (mouseup)="resumeCarousel()"

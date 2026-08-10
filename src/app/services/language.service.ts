@@ -36,6 +36,25 @@ const translations = {
     socialNetworks: 'Redes Sociales NA Antioquia',
     whatsapp: 'Contactar por WhatsApp',
     eventAlt: 'Evento de Narcóticos Anónimos',
+    logoAlt: 'Logo de Narcóticos Anónimos Antioquia',
+    quickLinks: 'Accesos a información y anuncios',
+    listenPublicInfo: 'Escuchar Información al Público',
+    seeInstitutions: 'Ver información de Hospitales e Instituciones',
+    seeEvents: 'Ver eventos de Narcóticos Anónimos',
+    audioCounter: 'Audio {current} de {total} · Toca la tarjeta para cambiar',
+    audioProgress: '{current} de {total} audios',
+    browserAudioUnsupported: 'Tu navegador no permite reproducir este audio.',
+    playerControls: 'Controles del reproductor',
+    pauseAudio: 'Pausar audio',
+    playAudio: 'Reproducir audio',
+    closePlayer: 'Cerrar reproductor',
+    closeNotice: 'Cerrar aviso',
+    closeEvents: 'Cerrar eventos',
+    previousEvent: 'Evento anterior',
+    nextEvent: 'Siguiente evento',
+    eventCounter: '{current} de {total}',
+    naColombia: 'Narcóticos Anónimos - Colombia',
+    contactWhatsApp: 'Contactar por WhatsApp',
   },
   en: {
     directoryTitle: 'MEDELLÍN AND SOUTH ANTIOQUIA AREA - Group Directory',
@@ -70,6 +89,25 @@ const translations = {
     socialNetworks: 'NA Antioquia Social Media',
     whatsapp: 'Contact via WhatsApp',
     eventAlt: 'Narcotics Anonymous event',
+    logoAlt: 'Narcotics Anonymous Antioquia logo',
+    quickLinks: 'Information and announcements',
+    listenPublicInfo: 'Listen to Public Information',
+    seeInstitutions: 'View Hospitals and Institutions information',
+    seeEvents: 'View Narcotics Anonymous events',
+    audioCounter: 'Audio {current} of {total} · Tap the card to change',
+    audioProgress: '{current} of {total} audios',
+    browserAudioUnsupported: 'Your browser does not support audio playback.',
+    playerControls: 'Audio player controls',
+    pauseAudio: 'Pause audio',
+    playAudio: 'Play audio',
+    closePlayer: 'Close player',
+    closeNotice: 'Close notice',
+    closeEvents: 'Close events',
+    previousEvent: 'Previous event',
+    nextEvent: 'Next event',
+    eventCounter: '{current} of {total}',
+    naColombia: 'Narcotics Anonymous - Colombia',
+    contactWhatsApp: 'Contact via WhatsApp',
   },
 } as const;
 
@@ -81,11 +119,40 @@ export class LanguageService {
     return translations[this.language][key];
   }
 
+  format(key: TranslationKey, values: Record<string, string | number>): string {
+    return Object.entries(values).reduce(
+      (text, [name, value]) => text.replaceAll(`{${name}}`, String(value)),
+      this.t(key),
+    );
+  }
+
+  zoneName(value: string): string {
+    if (this.language !== 'en') return value;
+
+    const names: Record<string, string> = {
+      'ZONA OCCIDENTAL': 'WESTERN ZONE',
+      'ZONA NORTE': 'NORTHERN ZONE',
+      'ZONA NORORIENTAL': 'NORTHEASTERN ZONE',
+      'ZONA CENTRO / CENTRO ORIENTAL': 'DOWNTOWN / EAST-CENTRAL ZONE',
+      'GRUPOS VIRTUALES': 'VIRTUAL GROUPS',
+      'REDES SOCIALES / INSTAGRAM / FACEBOOK': 'SOCIAL MEDIA / INSTAGRAM / FACEBOOK',
+    };
+    return names[value] ?? value;
+  }
+
   schedule(value: string): string {
     if (this.language !== 'en') return value;
 
     return value
       .replaceAll('Reunión Cerrada', 'Closed Meeting')
+      .replaceAll('Reunión Abierta', 'Open Meeting')
+      .replaceAll('Reunión Maratónica', 'Marathon Meeting')
+      .replaceAll('Unirse al grupo de WhatsApp', 'Join the WhatsApp group')
+      .replaceAll('Contraseña', 'Password')
+      .replaceAll('Clave', 'Passcode')
+      .replaceAll('Todos los días', 'Every day')
+      .replaceAll('Todo el día', 'All day')
+      .replaceAll('Festivos', 'Holidays')
       .replaceAll('Lunes', 'Monday')
       .replaceAll('Martes', 'Tuesday')
       .replaceAll('Miércoles', 'Wednesday')

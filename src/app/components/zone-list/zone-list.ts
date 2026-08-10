@@ -1,6 +1,7 @@
-import { Component, Input } from '@angular/core';
+import { Component, Input, inject } from '@angular/core';
 import { NA_ZONES, Zone } from '../../data/groups.data';
 import { GroupCard } from '../group-card/group-card';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-zone-list',
@@ -9,6 +10,7 @@ import { GroupCard } from '../group-card/group-card';
   styleUrl: './zone-list.css'
 })
 export class ZoneList {
+  readonly language = inject(LanguageService);
   zones: Zone[] = NA_ZONES;
   
   @Input() searchTerm: string = '';

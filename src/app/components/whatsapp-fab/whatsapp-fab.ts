@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-whatsapp-fab',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrl: './whatsapp-fab.css'
 })
 export class WhatsappFab {
+  readonly language = inject(LanguageService);
   // Esta variable controla si las opciones están visibles
   isActive: boolean = false;
 

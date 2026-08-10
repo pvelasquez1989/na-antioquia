@@ -1,4 +1,5 @@
-import { Component, OnDestroy, HostListener, ChangeDetectorRef } from '@angular/core';
+import { Component, OnDestroy, HostListener, ChangeDetectorRef, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 interface CarouselImage {
   src: string;
@@ -15,6 +16,7 @@ interface CarouselImage {
   styleUrls: ['./carousel.css']
 })
 export class Carousel implements OnDestroy {
+  readonly language = inject(LanguageService);
   
   constructor(private cdr: ChangeDetectorRef) {}
 

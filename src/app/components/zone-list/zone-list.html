@@ -3,7 +3,7 @@
   @for (zone of filteredZones; track zone.zoneName) {
     <!-- Si hay algo escrito en searchTerm, forzamos [open]="true" -->
     <details class="zone-accordion" [open]="searchTerm.length > 0">
-      <summary>{{ zone.zoneName }}</summary>
+      <summary>{{ language.zoneName(zone.zoneName) }}</summary>
       
       <div class="groups-list">
         @for (group of zone.groups; track group.name) {

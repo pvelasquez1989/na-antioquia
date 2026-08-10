@@ -1,4 +1,5 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
+import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-footer',
@@ -7,6 +8,7 @@ import { Component } from '@angular/core';
   styleUrls: ['./footer.css']
 })
 export class Footer {
+  readonly language = inject(LanguageService);
 
   probarAlert() {
     alert('El toque llegó al footer');
