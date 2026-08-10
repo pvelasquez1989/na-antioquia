@@ -109,6 +109,11 @@ export class Header {
     this.currentEventIndex = (this.currentEventIndex + 1) % this.eventImages.length;
   }
 
+  handlePublicInfoClick(event: Event) {
+    event.stopPropagation();
+    this.nextAudio();
+  }
+
   toggleAudio() {
     if (this.publicInfoAudio?.nativeElement.paused) {
       this.playAudio();
