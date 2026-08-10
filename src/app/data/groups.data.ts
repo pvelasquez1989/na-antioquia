@@ -325,8 +325,8 @@ export const NA_ZONES: Zone[] = [
       },
       {
         name: 'Creciendo Juntos',
-        mapLink: 'https://www.google.com/maps/search/?api=1&query=Transversal+32D+%2331-16+Envigado',
-        address: 'Transv 32D #31-16 J.A.C. Las Flores Envigado.',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Diag+39+%23+34C+-+sur+23+Envigado',
+        address: 'Diag 39 # 34C - sur 23 J.A.C. Barrio Obrero Envigado.',
         schedules: [
           { days: 'Jueves:', hours: '7:00 P.M.' }
         ]

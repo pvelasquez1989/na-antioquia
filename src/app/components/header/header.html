@@ -23,7 +23,7 @@
 </header>
 
 <section class="audio-reel-backdrop" [hidden]="!isPublicInfoOpen" role="dialog" aria-modal="true" aria-labelledby="audio-reel-title" (click)="closePublicInfo()">
-        <article class="audio-reel" [class.audio-reel--flyer]="currentPublicInfoItem.type === 'image'" role="button" tabindex="0" [attr.aria-label]="language.t('tapCard')" (click)="nextAudio($event)" (keydown.enter)="nextAudio($event)" (keydown.space)="nextAudio($event)">
+        <article class="audio-reel" [class.audio-reel--flyer]="currentPublicInfoItem.type === 'image'" role="button" tabindex="0" [attr.aria-label]="language.t('tapCard')" (click)="handlePublicInfoClick($event)" (keydown.enter)="handlePublicInfoClick($event)" (keydown.space)="handlePublicInfoClick($event)">
             <button class="audio-reel__close" type="button" [attr.aria-label]="language.t('closePlayer')" (click)="$event.stopPropagation(); closePublicInfo()">×</button>
             @if (currentPublicInfoItem.type === 'image') {
                 <div class="audio-reel__progress" [attr.aria-label]="language.format('audioProgress', { current: currentAudioIndex + 1, total: publicInfoItems.length })">

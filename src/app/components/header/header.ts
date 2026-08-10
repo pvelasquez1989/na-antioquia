@@ -21,6 +21,13 @@ export class Header {
       src: 'Eventos/InvitacionServirenIP.jpeg',
     },
     {
+      type: 'image' as const,
+      titleKey: 'serveInIpTitle' as const,
+      descriptionKey: 'serveInIpDescription' as const,
+      src: 'Eventos/comiteRelacionesPublicas.jpeg',
+      link: 'https://meet.google.com/gcm-wznp-itm',
+    },
+    {
       type: 'audio' as const,
       titleKey: 'publicInfoTitle' as const,
       descriptionKey: 'publicInfoDescription' as const,
@@ -132,6 +139,16 @@ export class Header {
     audio.src = this.currentPublicInfoItem.src;
     audio.load();
     this.playAudio();
+  }
+
+  handlePublicInfoClick(event: Event) {
+    if (this.currentPublicInfoItem.link) {
+      event.stopPropagation();
+      window.open(this.currentPublicInfoItem.link, '_blank', 'noopener,noreferrer');
+      return;
+    }
+
+    this.nextAudio(event);
   }
 
   setAudioPlaying(isPlaying: boolean) {
