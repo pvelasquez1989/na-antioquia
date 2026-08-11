@@ -6,6 +6,7 @@ interface CarouselImage {
   startDate?: string;
   endDate?: string;
   link?: string;
+  title?: string;
   mediaType?: 'image' | 'video';
 }
 
@@ -24,7 +25,7 @@ export class Carousel implements OnDestroy {
   images: CarouselImage[] = [
     { src: 'Eventos/EncuentroServidores.jpeg', startDate: '2026-08-09', endDate: '2026-09-13' },
     { src: 'Eventos/VideoEncuentroServidores.mp4', mediaType: 'video', startDate: '2026-08-09', endDate: '2026-09-13' },
-    { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16' }, 
+    { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16' },
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
     { src: 'Eventos/OtraOportunidad.jpeg', startDate: '2026-08-04', endDate: '2026-08-09' },
     { src: 'Eventos/Comuna13.jpeg', startDate: '2026-07-26', endDate: '2026-08-15' },
