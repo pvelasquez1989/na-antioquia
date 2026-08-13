@@ -31,6 +31,12 @@ export class Header {
       type: 'audio' as const,
       titleKey: 'publicInfoTitle' as const,
       descriptionKey: 'publicInfoDescription' as const,
+      src: 'audios/NARCOTICOS-10-Agosto.mp3',
+    },
+    {
+      type: 'audio' as const,
+      titleKey: 'publicInfoTitle' as const,
+      descriptionKey: 'publicInfoDescription' as const,
       src: 'audios/informacion-publica-03-agosto-2026.mp3',
     },
     {
@@ -61,6 +67,7 @@ export class Header {
   isAudioPlaying = false;
   currentAudioIndex = 0;
   currentEventIndex = 0;
+  private audioTimeoutId: any;
 
   get currentPublicInfoItem() {
     return this.publicInfoItems[this.currentAudioIndex];
@@ -77,6 +84,9 @@ export class Header {
   }
 
   closePublicInfo() {
+    if (this.audioTimeoutId) {
+      clearTimeout(this.audioTimeoutId);
+    }
     this.publicInfoAudio?.nativeElement.pause();
     this.isPublicInfoOpen = false;
   }
@@ -134,6 +144,9 @@ export class Header {
 
   nextAudio(event?: Event) {
     event?.stopPropagation();
+    if (this.audioTimeoutId) {
+      clearTimeout(this.audioTimeoutId);
+    }
     this.publicInfoAudio?.nativeElement.pause();
     this.currentAudioIndex = (this.currentAudioIndex + 1) % this.publicInfoItems.length;
 
@@ -142,7 +155,7 @@ export class Header {
     }
 
     // Aplazar para permitir que la vista se actualice y el elemento <audio> esté disponible.
-    setTimeout(() => {
+    this.audioTimeoutId = setTimeout(() => {
       const audio = this.publicInfoAudio?.nativeElement;
       if (audio) {
         audio.src = this.currentPublicInfoItem.src;
@@ -157,8 +170,15 @@ export class Header {
   }
 
   private playAudio() {
-    void this.publicInfoAudio?.nativeElement.play().catch(() => {
-      this.isAudioPlaying = false;
-    });
+    const audio = this.publicInfoAudio?.nativeElement;
+    if (!audio) return;
+
+    const playPromise = audio.play();
+    if (playPromise !== undefined) {
+      playPromise.catch(error => {
+        console.error('Error al reproducir el audio:', { error, src: audio.currentSrc });
+        this.isAudioPlaying = false;
+      });
+    }
   }
 }
