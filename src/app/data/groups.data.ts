@@ -194,8 +194,8 @@ export const NA_ZONES: Zone[] = [
     groups: [
       {
         name: 'La Fortaleza',
-        mapLink: 'https://www.google.com/maps/search/?api=1&query=Carrera+44A+%2385-191+Medellin',
-        address: 'Cra 44A #85-191 Piso 2, Aranjuez.',
+        mapLink: 'https://maps.app.goo.gl/JVq93NPLFaW4NbvU8',
+        address: 'Calle 88 #45-80 Sede Social Las Esmeraldas, Aranjuez.',
         schedules: [
           { days: 'Martes:', hours: '7:15 P.M.' },
           { days: 'Sábado:', hours: '7:15 P.M.' }
