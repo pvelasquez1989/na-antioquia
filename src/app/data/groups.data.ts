@@ -97,7 +97,8 @@ export const NA_ZONES: Zone[] = [
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Calle+8B+Sopetran',
         address: 'Calle 8B Salón Parroquial ingreso Cl 8B, Sopetrán',
         schedules: [
-          { days: 'Miércoles:', hours: '6:00 P.M.' }
+          { days: 'Miércoles:', hours: '6:00 P.M.' },
+          { days: 'Domingos:', hours: '12:00 P.M.' }
         ]
       }
     ]
@@ -225,6 +226,14 @@ export const NA_ZONES: Zone[] = [
         address: 'Cl 108 #43-32 B. (La Divina Providencia) Comuna 1 (Popular).',
         schedules: [
           { days: 'Jueves:', hours: '7:00 P.M.' }
+        ]
+      },
+      {
+        name: 'Sigamos Viniendo',
+        mapLink: 'https://maps.app.goo.gl/ZHQCdXFnheVXHhUs9',
+        address: 'Calle 54 # 16 - 57. Iglesia Nuestra Señora de Torcoroma, sector Villatina.',
+        schedules: [
+          { days: 'Martes y Jueves:', hours: '7:00 P.M.' }
         ]
       }
     ]
