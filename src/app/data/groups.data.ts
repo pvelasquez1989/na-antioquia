@@ -228,14 +228,6 @@ export const NA_ZONES: Zone[] = [
           { days: 'Jueves:', hours: '7:00 P.M.' }
         ]
       },
-      {
-        name: 'Sigamos Viniendo',
-        mapLink: 'https://maps.app.goo.gl/ZHQCdXFnheVXHhUs9',
-        address: 'Calle 54 # 16 - 57. Iglesia Nuestra Señora de Torcoroma, sector Villatina.',
-        schedules: [
-          { days: 'Martes y Jueves:', hours: '7:00 P.M.' }
-        ]
-      }
     ]
   },
   {
@@ -279,6 +271,14 @@ export const NA_ZONES: Zone[] = [
           { days: 'Domingo y Festivos:', hours: '10:00A.M.' }
         ],
         internalNote: '*Ultimo Sábado de cada mes - Reunión Maratónica. *1er Sábado de cada mes - DISCUSIÓN ABIERTA 8:45 P.M.'
+      },
+       {
+        name: 'Sigamos Viniendo',
+        mapLink: 'https://maps.app.goo.gl/ZHQCdXFnheVXHhUs9',
+        address: 'Calle 54 # 16 - 57. Iglesia Nuestra Señora de Torcoroma, sector Villatina.',
+        schedules: [
+          { days: 'Martes y Jueves:', hours: '7:00 P.M.' }
+        ]
       }
     ]
   },
