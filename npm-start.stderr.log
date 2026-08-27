@@ -454,3 +454,503 @@
         ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
 
 [39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'audioClips' does not exist on type 'Header'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:28:139:
+[37m      28 │ ...', { current: currentAudioIndex + 1, total: [32maudioClips[37m.length })">
+         ╵                                                [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'audioClips' does not exist on type 'Header'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:29:30:
+[37m      29 │                 @for (clip of [32maudioClips[37m; track clip.src; let inde...
+         ╵                               [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'currentAudio' does not exist on type 'Header'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:52:
+[37m      35 │ ...id="audio-reel-title">{{ language.t([32mcurrentAudio[37m.titleKey) }}</h2>
+         ╵                                        [32m~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'currentAudio' does not exist on type 'Header'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:61:
+[37m      36 │ ...el__description">{{ language.t([32mcurrentAudio[37m.descriptionKey) }}</p>
+         ╵                                   [32m~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'audioClips' does not exist on type 'Header'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:37:119:
+[37m      37 │ ...current: currentAudioIndex + 1, total: [32maudioClips[37m.length }) }}</p>
+         ╵                                           [32m~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2339: Property 'currentAudio' does not exist on type 'Header'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:38:43:
+[37m      38 │ ...o #publicInfoAudio [src]="[32mcurrentAudio[37m.src" preload="none" (pla...
+         ╵                              [32m~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"publicInfoTitle" | "naSpotTitle" | "serveInIpTitle"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.
+  Type '"serveInIpTitle"' is not assignable to type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:74:
+[37m      35 │ ...-reel-title">{{ language.t(currentPublicInfoItem.[32mtitleKey[37m) }}</h2>
+         ╵                                                     [32m~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"publicInfoDescription" | "naSpotDescription" | "serveInIpDescription"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.
+  Type '"serveInIpDescription"' is not assignable to type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:83:
+[37m      36 │ ...iption">{{ language.t(currentPublicInfoItem.[32mdescriptionKey[37m) }}</p>
+         ╵                                                [32m~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"serveInIpTitle"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:39:121:
+[37m      39 │ ...cInfoItem.src" [alt]="language.t(currentPublicInfoItem.[32mtitleKey[37m)">
+         ╵                                                           [32m~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"publicInfoTitle" | "naSpotTitle" | "serveInIpTitle"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.
+  Type '"serveInIpTitle"' is not assignable to type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:74:
+[37m      35 │ ...-reel-title">{{ language.t(currentPublicInfoItem.[32mtitleKey[37m) }}</h2>
+         ╵                                                     [32m~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"publicInfoDescription" | "naSpotDescription" | "serveInIpDescription"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.
+  Type '"serveInIpDescription"' is not assignable to type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:83:
+[37m      36 │ ...iption">{{ language.t(currentPublicInfoItem.[32mdescriptionKey[37m) }}</p>
+         ╵                                                [32m~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"serveInIpTitle"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:39:121:
+[37m      39 │ ...cInfoItem.src" [alt]="language.t(currentPublicInfoItem.[32mtitleKey[37m)">
+         ╵                                                           [32m~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"publicInfoTitle" | "naSpotTitle" | "serveInIpTitle"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.
+  Type '"serveInIpTitle"' is not assignable to type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:35:74:
+[37m      35 │ ...-reel-title">{{ language.t(currentPublicInfoItem.[32mtitleKey[37m) }}</h2>
+         ╵                                                     [32m~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"publicInfoDescription" | "naSpotDescription" | "serveInIpDescription"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.
+  Type '"serveInIpDescription"' is not assignable to type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:36:83:
+[37m      36 │ ...iption">{{ language.t(currentPublicInfoItem.[32mdescriptionKey[37m) }}</p>
+         ╵                                                [32m~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"serveInIpTitle"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 39 more ... | "contactWhatsApp"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/header/header.html:39:121:
+[37m      39 │ ...cInfoItem.src" [alt]="language.t(currentPublicInfoItem.[32mtitleKey[37m)">
+         ╵                                                           [32m~~~~~~~~[0m
+
+  Error occurs in the template of component Header.
+
+    src/app/components/header/header.ts:8:15:
+[37m      8 │   templateUrl: [32m'./header.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~[0m
+
+
+[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
+[1m[31m[31mX [41;31m[[41;97mERROR[41;31m][0m [1mTS2345: Argument of type '"contactWhatsApp"' is not assignable to parameter of type '"events" | "directoryTitle" | "publicInfo" | "hospitals" | "helpNow" | "recoveryPossible" | "findGroup" | "searchPlaceholder" | "clearSearch" | "directions" | "comingSoon" | ... 38 more ... | "naColombia"'.[0m [1m[35m[plugin angular-compiler][0m
+
+    src/app/components/whatsapp-fab/whatsapp-fab.html:13:80:
+[37m      13 │ ...click)="toggleWhatsApp()" [title]="language.t([32m'contactWhatsApp'[37m)">
+         ╵                                                  [32m~~~~~~~~~~~~~~~~~[0m
+
+  Error occurs in the template of component WhatsappFab.
+
+    src/app/components/whatsapp-fab/whatsapp-fab.ts:7:15:
+[37m      7 │   templateUrl: [32m'./whatsapp-fab.html'[37m,
+        ╵                [32m~~~~~~~~~~~~~~~~~~~~~[0m
+
+[39m[22m
