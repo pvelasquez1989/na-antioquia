@@ -27,17 +27,17 @@ export class Header {
       src: 'Eventos/comiteRelacionesPublicas.jpeg',
       link: 'https://meet.google.com/gcm-wznp-itm',
     },
-    {
+     {
       type: 'audio' as const,
       titleKey: 'publicInfoTitle' as const,
       descriptionKey: 'publicInfoDescription' as const,
-      src: 'audios/NARCOTICOS-10-Agosto.mp3',
+      src: 'audios/NARCOTICOSLUNES24.mp3',
     },
     {
       type: 'audio' as const,
       titleKey: 'publicInfoTitle' as const,
       descriptionKey: 'publicInfoDescription' as const,
-      src: 'audios/informacion-publica-03-agosto-2026.mp3',
+      src: 'audios/NARCOTICOS-10-Agosto.mp3',
     },
     {
       type: 'audio' as const,

@@ -1,4 +1,4 @@
-import { Component, OnDestroy, HostListener, ChangeDetectorRef, inject } from '@angular/core';
+import { Component, OnInit, OnDestroy, HostListener, ChangeDetectorRef, inject } from '@angular/core';
 import { LanguageService } from '../../services/language.service';
 
 interface CarouselImage {
@@ -17,7 +17,7 @@ interface CarouselImage {
   templateUrl: './carousel.html',
   styleUrls: ['./carousel.css']
 })
-export class Carousel implements OnDestroy {
+export class Carousel implements OnInit, OnDestroy {
   readonly language = inject(LanguageService);
   
   constructor(private cdr: ChangeDetectorRef) {}
@@ -31,7 +31,6 @@ export class Carousel implements OnDestroy {
     { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16' },
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
     { src: 'Eventos/QRUltimaEdicion.jpeg', startDate: '2026-07-26', endDate: '2027-07-31' },
-    { src: 'Eventos/AniversariogrupoElCamino.jpeg', startDate: '2026-07-07', endDate: '2026-09-05' },
     { src: 'Eventos/MaratonicaLosLazos.jpeg', startDate: '2026-07-07', endDate: '2026-12-31' },
     { src: 'Eventos/MaratonicaGrupoVida.jpeg', startDate: '2026-07-08', endDate: '2026-12-31' },
     { src: 'Eventos/LaUnidadExperimental.jpeg', startDate: '2026-06-17', endDate: '2026-08-28' }
@@ -69,6 +68,10 @@ export class Carousel implements OnDestroy {
     video.defaultMuted = false;
     video.removeAttribute('muted');
     video.volume = 1;
+  }
+
+  ngOnInit() {
+    setTimeout(() => this.startCarousel(), 15000);
   }
 
   ngOnDestroy() { this.clearTimer(); }
