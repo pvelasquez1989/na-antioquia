@@ -31,13 +31,13 @@ export class Header {
       type: 'audio' as const,
       titleKey: 'publicInfoTitle' as const,
       descriptionKey: 'publicInfoDescription' as const,
-      src: 'audios/NARCOTICOSLUNES24.mp3',
+      src: 'audios/NARCOTICOS ANONIMOS-24-Agosto.mp3',
     },
     {
       type: 'audio' as const,
       titleKey: 'publicInfoTitle' as const,
       descriptionKey: 'publicInfoDescription' as const,
-      src: 'audios/NARCOTICOS-10-Agosto.mp3',
+      src: 'audios/NARCOTICOS ANONIMOS-10-Agosto.mp3',
     },
     {
       type: 'audio' as const,
@@ -71,6 +71,16 @@ export class Header {
 
   get currentPublicInfoItem() {
     return this.publicInfoItems[this.currentAudioIndex];
+  }
+
+  get currentPublicInfoTitle() {
+    const item = this.currentPublicInfoItem;
+
+    if (item.type !== 'audio') {
+      return this.language.t(item.titleKey);
+    }
+
+    return item.src.split('/').pop()?.replace(/\.[^/.]+$/, '') ?? '';
   }
 
   get currentEvent() {

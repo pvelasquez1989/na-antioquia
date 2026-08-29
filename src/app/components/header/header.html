@@ -40,7 +40,7 @@
             </div>
             <div class="audio-reel__badge" aria-hidden="true">IP</div>
             <p class="audio-reel__eyebrow">{{ language.t('footerArea') }}</p>
-            <h2 id="audio-reel-title">{{ language.t(currentPublicInfoItem.titleKey) }}</h2>
+            <h2 id="audio-reel-title">{{ currentPublicInfoTitle }}</h2>
             <p class="audio-reel__description">{{ language.t(currentPublicInfoItem.descriptionKey) }}</p>
             <p class="audio-reel__counter">{{ language.format('audioCounter', { current: currentAudioIndex + 1, total: publicInfoItems.length }) }}</p>
                 <audio #publicInfoAudio [src]="currentPublicInfoItem.src" preload="none" (play)="setAudioPlaying(true)" (pause)="setAudioPlaying(false)" (ended)="setAudioPlaying(false)">
