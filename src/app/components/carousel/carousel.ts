@@ -26,6 +26,7 @@ export class Carousel implements OnInit, OnDestroy {
     { src: 'Eventos/DiaUnidad.jpeg', startDate: '2026-08-24', endDate: '2026-09-05' },
     { src: 'Eventos/Elcamino1.jpeg', startDate: '2026-08-27', endDate: '2026-09-05' },
     { src: 'Eventos/CuartoDiaElCamino.jpeg', startDate: '2026-09-01', endDate: '2026-09-01' },
+    { src: 'Eventos/CuartoDiaElCaminoV2.jpeg', startDate: '2026-09-02', endDate: '2026-09-03' },
     { src: 'Eventos/EncuentroServidores.jpeg', startDate: '2026-08-09', endDate: '2026-09-13' },
     { src: 'Eventos/VideoEncuentroServidores.mp4', mediaType: 'video', startDate: '2026-08-09', endDate: '2026-09-13' },
     { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16' },
