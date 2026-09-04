@@ -57,7 +57,7 @@ export const NA_ZONES: Zone[] = [
           { days: 'Jueves:', hours: '7:00P.M. (Híbrida)' },
           { days: 'Sábado:', hours: '7:00P.M. (Híbrida)' }
         ],
-        virtualLinks: [{ text: 'meet.google.com/ohu-gjmt-srj', url: 'https://meet.google.com/ohu-gjmt-srj' }]
+        virtualLinks: [{ text: 'https://meet.google.com/zzs-vasv-fsj', url: 'https://meet.google.com/zzs-vasv-fsj' }]
       },
       {
         name: 'Vivir Limpios',
