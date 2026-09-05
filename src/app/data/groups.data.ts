@@ -167,7 +167,8 @@ export const NA_ZONES: Zone[] = [
         address: 'Cl 24A #58A-80 J.A.C. Barrio Nuevo',
         schedules: [
           { days: 'Lunes:', hours: '(Reunión Cerrada) 7:15 P.M.' },
-          { days: 'Jueves:', hours: '7:15 P.M.' }
+          { days: 'Jueves:', hours: '7:15 P.M.' },
+          { days: 'Sábado:', hours: '7:15 P.M.' }
         ]
       },
       {
@@ -418,7 +419,7 @@ export const NA_ZONES: Zone[] = [
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Carrera+50+%23139+Sur-06+Caldas',
         address: 'Cra 50 #139 Sur-06 Caldas',
         schedules: [
-          { days: 'Jueves, Viernes:', hours: '7:00 P.M.' },
+          { days: 'Lunes a Viernes:', hours: '7:00 P.M.' },
           { days: 'Sábado (Reunión Cerrada):', hours: '7:00 P.M.' },
           { days: 'Domingo:', hours: '8:00 A.M.' }
         ]
