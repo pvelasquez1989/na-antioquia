@@ -53,7 +53,7 @@ export const NA_ZONES: Zone[] = [
         address: 'Cl 49 #81-44 Junta de Acción Comunal Calasanz',
         schedules: [
           { days: 'Lunes:', hours: '7:00P.M. (Híbrida)' },
-          { days: 'Martes:', hours: '8:00P.M. Estudio de Pasos(Virtual)' },
+          { days: 'Martes:', hours: '7:00P.M. Estudio de Pasos(Hibrida)' },
           { days: 'Jueves:', hours: '7:00P.M. (Híbrida)' },
           { days: 'Sábado:', hours: '7:00P.M. (Híbrida)' }
         ],
@@ -190,8 +190,8 @@ export const NA_ZONES: Zone[] = [
       },
       {
         name: 'DOCE PASOS',
-        mapLink: 'https://www.google.com/maps/search/?api=1&query=Cra+32+%2328A-05+Sotano+del+edificio+Barrio+Sanmiguel+Santa+Rosa+de+Osos',
-        address: 'Cra 32 # 28 a 05 Sotano del edificio, Barrio Sanmiguel, Santa Rosa de Osos.',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Cra+32+%2328A-05+Sotano+del+edificio+Barrio+San+Miguel+Santa+Rosa+de+Osos',
+        address: 'Cra 32 # 28 a 05 Sotano del edificio, Barrio San Miguel, Santa Rosa de Osos.',
         schedules: [
           { days: 'Sábados:', hours: '4:00 P.M.' }
         ]
