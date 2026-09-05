@@ -187,6 +187,14 @@ export const NA_ZONES: Zone[] = [
           { days: 'Sábado:', hours: '3:00 P.M.' },
           { days: 'Domingo y Festivos:', hours: '10:00 A.M.' }
         ]
+      },
+      {
+        name: 'DOCE PASOS',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Cra+32+%2328A-05+Sotano+del+edificio+Barrio+Sanmiguel+Santa+Rosa+de+Osos',
+        address: 'Cra 32 # 28 a 05 Sotano del edificio, Barrio Sanmiguel, Santa Rosa de Osos.',
+        schedules: [
+          { days: 'Sábados:', hours: '4:00 P.M.' }
+        ]
       }
     ]
   },
