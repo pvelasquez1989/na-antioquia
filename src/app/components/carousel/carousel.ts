@@ -25,7 +25,7 @@ export class Carousel implements OnInit, OnDestroy {
   images: CarouselImage[] = [
     { src: 'Eventos/LimpioYSereno.jpeg', startDate: '2026-09-07', endDate: '2026-09-12' },
     { src: 'Eventos/Comuna13.jpeg', startDate: '2026-09-07', endDate: '2026-09-12' },
-    { src: 'Eventos/VideoEncuentroServidores_con_logo.mp4', startDate: '2026-09-07', endDate: '2026-09-13' },
+    { src: 'Eventos/VideoEncuentroServidores_con_logo.mp4', mediaType: 'video', startDate: '2026-09-07', endDate: '2026-09-13' },
     { src: 'Eventos/SegundoEncuentroServidores.jpeg', startDate: '2026-09-07', endDate: '2026-09-13' },
     { src: 'Eventos/EncuentroServidores.jpeg', startDate: '2026-08-09', endDate: '2026-09-13' },
     { src: 'Eventos/VideoEncuentroServidores.mp4', mediaType: 'video', startDate: '2026-08-09', endDate: '2026-09-13' },
