@@ -53,11 +53,10 @@ export const NA_ZONES: Zone[] = [
         address: 'Cl 49 #81-44 Junta de Acción Comunal Calasanz',
         schedules: [
           { days: 'Lunes:', hours: '7:00P.M. (Híbrida)' },
-          { days: 'Martes:', hours: '7:00P.M. Estudio de Pasos(Híbrida)' },
+          { days: 'Martes:', hours: '7:00P.M. Taller de Pasos(Híbrida)' },
           { days: 'Jueves:', hours: '7:00P.M. (Híbrida)' },
           { days: 'Sábado:', hours: '7:00P.M. (Híbrida)' }
-        ],
-        virtualLinks: [{ text: 'https://meet.google.com/zzs-vasv-fsj', url: 'https://meet.google.com/zzs-vasv-fsj' }]
+        ]
       },
       {
         name: 'Vivir Limpios',
@@ -147,8 +146,7 @@ export const NA_ZONES: Zone[] = [
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Carrera+78A+%2395-55+Medellin',
         address: 'Cra 78A #95-55 J.A.C. San Martín de Porres',
         schedules: [
-          { days: 'Martes:', hours: '7:30 P.M.' },
-          { days: 'Miércoles:', hours: '8:00 P.M.' }
+          { days: 'Martes:', hours: '7:30 P.M.' }
         ]
       },
       {
@@ -377,7 +375,7 @@ export const NA_ZONES: Zone[] = [
         schedules: [
           { days: 'Lunes a Viernes:', hours: '12:30 P.M.' },
           { days: 'Lunes, Martes, Viernes, Domingo:', hours: '7:00 P.M.' },
-          { days: 'Miércoles, Jueves:', hours: '8:00 P.M.' },
+          { days: 'Miércoles, Jueves:', hours: '7:00 P.M.' },
           { days: 'Sábado:', hours: '12:30 P.M., 7:00 P.M. y 9:30 P.M.' }
         ]
       },
@@ -387,6 +385,15 @@ export const NA_ZONES: Zone[] = [
         address: 'Cra 48 #66-00 Simón Bolívar Itagüí',
         schedules: [
           { days: 'Martes, Viernes:', hours: '8:30 P.M.' }
+        ]
+      },
+      {
+        name: 'El primer Paso',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Carrera+57+%2364C-24+Itagui',
+        address: 'J.A.C. Barrio El Rosario - Itagüí. Cra 57 # 64 c - 24',
+        schedules: [
+          { days: 'Lunes, Miércoles y Viernes:', hours: '7:00 P.M.' },
+          { days: 'Domingos:', hours: '9:00 A.M.' }
         ]
       },
       {
@@ -447,7 +454,7 @@ export const NA_ZONES: Zone[] = [
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Calle+37+%23520-63+Guarne',
         address: 'Cl 37 #520-63 B. San Antonio Guarne',
         schedules: [
-          { days: 'Lunes:', hours: '7:00 P.M.' },
+          { days: 'Lunes y Jueves:', hours: '7:00 P.M.' },
           { days: 'Domingo:', hours: '4:00 P.M.' }
         ]
       },
