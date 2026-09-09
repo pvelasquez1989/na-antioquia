@@ -15,7 +15,10 @@
   <div class="group-schedule">
     <!-- Repetimos este bloque por cada horario que tenga el grupo -->
     @for (schedule of group.schedules; track $index) {
-      <div class="schedule-item"><span>{{ language.schedule(schedule.days) }}</span> <strong>{{ language.schedule(schedule.hours) }}</strong></div>
+      <div class="schedule-item">
+        <span>{{ language.schedule(schedule.days) }}</span>
+        <strong [innerHTML]="language.schedule(schedule.hours)"></strong>
+      </div>
     }
     
     @if (group.internalNote) {
