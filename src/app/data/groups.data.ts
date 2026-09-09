@@ -53,7 +53,7 @@ export const NA_ZONES: Zone[] = [
         address: 'Cl 49 #81-44 Junta de Acción Comunal Calasanz',
         schedules: [
           { days: 'Lunes:', hours: '7:00P.M. (Híbrida)' },
-          { days: 'Martes:', hours: '7:00P.M. Taller de Pasos(Híbrida)' },
+          { days: 'Martes:', hours: '7:00P.M. Taller de<br>Pasos(Híbrida)' },
           { days: 'Jueves:', hours: '7:00P.M. (Híbrida)' },
           { days: 'Sábado:', hours: '7:00P.M. (Híbrida)' }
         ]
