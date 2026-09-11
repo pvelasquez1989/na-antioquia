@@ -451,8 +451,8 @@ export const NA_ZONES: Zone[] = [
       },
       {
         name: 'No Más Solos',
-        mapLink: 'https://www.google.com/maps/search/?api=1&query=Calle+37+%23520-63+Guarne',
-        address: 'Cl 37 #520-63 B. San Antonio Guarne',
+        mapLink: 'https://www.google.com/maps/search/?api=1&query=Cl+37+%2352C-63+S.C+Barrio+San+Antonio+Guarne',
+        address: 'Cl 37 #52C-63 S.C Barrio San Antonio Guarne',
         schedules: [
           { days: 'Lunes y Jueves:', hours: '7:00 P.M.' },
           { days: 'Domingo:', hours: '4:00 P.M.' }
