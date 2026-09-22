@@ -23,13 +23,7 @@ export class Carousel implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   images: CarouselImage[] = [
-    { src: 'Eventos/SegundoEncuentroServidores.jpeg', startDate: '2026-09-07', endDate: '2026-09-13' },
-    { src: 'Eventos/LimpioYSereno.jpeg', startDate: '2026-09-07', endDate: '2026-09-12' },
-    { src: 'Eventos/Comuna13.jpeg', startDate: '2026-09-07', endDate: '2026-09-12' },
-    { src: 'Eventos/VideoEncuentroServidores_con_logo.mp4', mediaType: 'video', startDate: '2026-09-07', endDate: '2026-09-13' },
-    { src: 'Eventos/EncuentroServidores.jpeg', startDate: '2026-08-09', endDate: '2026-09-13' },
-    { src: 'Eventos/VideoEncuentroServidores.mp4', mediaType: 'video', startDate: '2026-08-09', endDate: '2026-09-13' },
-    { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-09-12', endDate: '2026-09-15', link: 'https://meet.google.com/bzt-jmky-udh' },
+    { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-09-22', endDate: '2026-09-22', link: 'https://meet.google.com/bzt-jmky-udh' },
     { src: 'Eventos/EventoConvencionAntioquia.jpeg', startDate: '2026-09-08', endDate: '2026-10-04' },
     { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16' },
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
