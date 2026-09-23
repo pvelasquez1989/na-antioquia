@@ -436,8 +436,8 @@ export const NA_ZONES: Zone[] = [
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Calle+54+%2347-48+Rionegro',
         address: 'Cl 54 #47-48 Rionegro',
         schedules: [
-          { days: 'Lunes, Martes, Miércoles y Viernes:', hours: '7:00 P.M.' },
-          { days: 'Jueves (Estudio Tradiciones):', hours: '7:00 P.M.' },
+          { days: 'Lunes, Martes, Jueves y Viernes:', hours: '7:00 P.M.' },
+          { days: 'Miércoles (Estudio De Pasos):', hours: '7:00 P.M.' },
           { days: 'Sábado y Domingo:', hours: '5:00 P.M.' }
         ]
       },
