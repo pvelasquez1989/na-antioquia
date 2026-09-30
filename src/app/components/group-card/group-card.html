@@ -3,20 +3,20 @@
   
   <!-- Si el grupo tiene dirección y mapa, los mostramos -->
   @if (group.address && group.mapLink) {
-    <p class="group-address">
+    <div class="group-location">
       <a [href]="group.mapLink" target="_blank" class="location-button">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/></svg>
         {{ language.t('directions') }}
-      </a> 
-      {{ group.address }}
-    </p>
+      </a>
+      <p class="group-address">{{ group.address }}</p>
+    </div>
   }
 
   <div class="group-schedule">
     <!-- Repetimos este bloque por cada horario que tenga el grupo -->
     @for (schedule of group.schedules; track $index) {
       <div class="schedule-item">
-        <span>{{ language.schedule(schedule.days) }}</span>
+        <span class="schedule-days">{{ language.schedule(schedule.days) }}</span>
         <strong [innerHTML]="language.schedule(schedule.hours)"></strong>
       </div>
     }

@@ -4,38 +4,58 @@
     border-radius: 8px;
     padding: 16px;
     margin-top: 12px;
+    overflow: hidden;
 }
 .group-name {
     font-size: 1.1rem;
     font-weight: 700;
     text-transform: uppercase;
-    margin: 0 0 8px 0;
+    margin: 0 0 12px;
+    line-height: 1.3;
+}
+.group-location {
+    display: grid;
+    grid-template-columns: auto minmax(0, 1fr);
+    align-items: start;
+    gap: 8px 12px;
+    margin-bottom: 14px;
 }
 .group-address {
     font-size: 0.9rem;
     color: var(--color-texto-secundario);
-    margin-bottom: 12px;
+    margin: 0;
+    line-height: 1.45;
+    overflow-wrap: anywhere;
 }
-.group-address a {
+.group-location a {
     color: var(--color-acento-inicio);
     text-decoration: none;
     font-weight: 600;
 }
-.group-address a:hover {
+.group-location a:hover {
     text-decoration: underline;
 }
 .group-schedule {
     border-top: 1px dashed var(--color-borde);
-    padding-top: 12px;
+    padding-top: 14px;
 }
 .schedule-item {
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: minmax(7.5rem, 42%) minmax(0, 1fr);
+    column-gap: 12px;
+    align-items: start;
     font-size: 0.9rem;
-    padding: 4px 0;
+    line-height: 1.5;
+    padding: 5px 0;
+}
+.schedule-days {
+    color: var(--color-texto-secundario);
+    font-weight: 600;
 }
 .schedule-item strong {
     color: var(--color-texto-principal);
+    min-width: 0;
+    overflow-wrap: anywhere;
 }
 .link-url {
     display: block;
@@ -49,7 +69,8 @@
     font-size: 0.8rem;
     color: #e11d48;
     font-weight: bold;
-    margin-top: 4px;
+    line-height: 1.45;
+    margin: 10px 0 0;
 }
 .location-button {
     display: inline-flex;
@@ -63,7 +84,7 @@
     font-weight: 600;
     text-decoration: none;
     transition: background-color 0.2s, color 0.2s;
-    margin-right: 8px;
+    white-space: nowrap;
 }
 .location-button:hover {
     background-color: #e5e7eb;
@@ -73,4 +94,20 @@
     width: 14px;
     height: 14px;
     fill: currentColor;
+}
+
+@media (max-width: 420px) {
+    .group-location,
+    .schedule-item {
+        grid-template-columns: 1fr;
+        row-gap: 3px;
+    }
+
+    .location-button {
+        justify-self: start;
+    }
+
+    .schedule-item {
+        padding: 7px 0;
+    }
 }
