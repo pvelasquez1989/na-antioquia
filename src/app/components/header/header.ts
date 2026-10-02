@@ -83,6 +83,10 @@ export class Header {
       src: 'Mercaderia/Gorra azul con emblema de Antioquia.png',
     },
     {
+      titleKey: 'redTshirtAndCapTitle' as const,
+      src: 'Mercaderia/Camiseta Roja y gorra.jpeg',
+    },
+    {
       titleKey: 'mugTitle' as const,
       src: 'Mercaderia/Mug Convención de Antioquia.png',
     },
