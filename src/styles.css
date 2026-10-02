@@ -78,6 +78,275 @@ app-footer {
     z-index: 100;
 }
 
+/* Galer\u00eda de mercaderia de la Convenci\u00f3n Antioquia */
+.quick-link__circle--merchandise {
+    background: #fff;
+    border-color: #b78a1f;
+    overflow: hidden;
+}
+
+.quick-link__circle--merchandise img {
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+@media (max-width: 480px) {
+    .profile-title { font-size: 1rem; }
+    .quick-links { flex-wrap: wrap; gap: 22px; }
+}
+
+.merchandise-backdrop {
+    align-items: center;
+    background: rgba(0, 48, 135, 0.55);
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    padding: 20px;
+    position: fixed;
+    z-index: 1000;
+}
+
+.merchandise-backdrop[hidden] { display: none; }
+
+.merchandise-gallery {
+    background: var(--color-tarjeta);
+    border: 1px solid var(--color-borde);
+    border-radius: 24px;
+    box-shadow: 0 18px 50px rgba(0, 20, 58, 0.42);
+    box-sizing: border-box;
+    max-height: calc(100vh - 40px);
+    max-width: 920px;
+    overflow: auto;
+    padding: 34px 28px 28px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.merchandise-gallery__close {
+    align-items: center;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 50%;
+    color: var(--color-texto-principal);
+    cursor: pointer;
+    display: flex;
+    font-size: 1.8rem;
+    height: 38px;
+    justify-content: center;
+    line-height: 1;
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    width: 38px;
+}
+
+.merchandise-gallery__logo {
+    display: block;
+    height: auto;
+    margin: 0 auto 12px;
+    max-width: 260px;
+    width: 100%;
+}
+
+.merchandise-gallery h2 { margin: 0 44px 8px 0; }
+
+.merchandise-gallery__intro {
+    color: var(--color-texto-secundario);
+    margin: 0 auto 22px;
+    max-width: 520px;
+}
+
+.merchandise-grid {
+    display: grid;
+    gap: 16px;
+    grid-template-columns: repeat(auto-fill, minmax(136px, 160px));
+    justify-content: center;
+}
+
+.merchandise-card {
+    appearance: none;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 16px;
+    color: var(--color-texto-principal);
+    cursor: pointer;
+    font: inherit;
+    overflow: hidden;
+    padding: 0;
+    text-align: center;
+    transition: box-shadow 0.2s ease, transform 0.2s ease;
+    width: 160px;
+}
+
+.merchandise-card:hover,
+.merchandise-card:focus-visible {
+    box-shadow: 0 8px 18px rgba(0, 48, 135, 0.18);
+    transform: translateY(-3px);
+}
+
+.merchandise-card:focus-visible {
+    outline: 3px solid #ec6739;
+    outline-offset: 3px;
+}
+
+.merchandise-card__image-wrap {
+    align-items: center;
+    aspect-ratio: 1;
+    background: #fff;
+    display: flex;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.merchandise-card__image-wrap img {
+    display: block;
+    height: 100%;
+    object-fit: cover;
+    width: 100%;
+}
+
+.merchandise-card__image-placeholder {
+    align-items: center;
+    color: #5a6e4a;
+    display: flex;
+    flex-direction: column;
+    font-size: 0.85rem;
+    font-weight: 700;
+    gap: 12px;
+    padding: 24px;
+    text-align: center;
+}
+
+.merchandise-card__image-placeholder[hidden] {
+    display: none;
+}
+
+.merchandise-card__image-placeholder svg {
+    height: 68px;
+    width: 68px;
+}
+
+.merchandise-card__title {
+    display: block;
+    font-size: 0.9rem;
+    font-weight: 700;
+    margin: 0;
+    padding: 10px 12px 12px;
+}
+
+.merchandise-gallery__notice {
+    color: var(--color-texto-secundario);
+    font-size: 0.88rem;
+    margin: 22px 0 0;
+}
+
+.merchandise-gallery__contact {
+    align-items: center;
+    color: #128c7e;
+    display: inline-flex;
+    font-weight: 700;
+    gap: 4px;
+    text-decoration: none;
+}
+
+.merchandise-gallery__contact:hover,
+.merchandise-gallery__contact:focus-visible {
+    text-decoration: underline;
+}
+
+.merchandise-gallery__contact-icon {
+    align-items: center;
+    background: #25d366;
+    border-radius: 50%;
+    display: inline-flex;
+    height: 42px;
+    justify-content: center;
+    width: 42px;
+}
+
+.merchandise-gallery__contact-icon svg {
+    height: 28px;
+    width: 28px;
+}
+
+.merchandise-gallery__close:focus-visible {
+    outline: 3px solid var(--color-texto-secundario);
+    outline-offset: 3px;
+}
+
+.product-preview-backdrop {
+    align-items: center;
+    background: rgba(0, 20, 58, 0.72);
+    display: flex;
+    inset: 0;
+    justify-content: center;
+    padding: 20px;
+    position: fixed;
+    z-index: 1010;
+}
+
+.product-preview-backdrop[hidden] { display: none; }
+
+.product-preview {
+    background: var(--color-tarjeta);
+    border-radius: 20px;
+    box-shadow: 0 18px 50px rgba(0, 20, 58, 0.5);
+    box-sizing: border-box;
+    max-height: calc(100vh - 40px);
+    max-width: min(520px, calc(100vw - 40px));
+    overflow: auto;
+    padding: 18px 18px 22px;
+    position: relative;
+    text-align: center;
+    width: 100%;
+}
+
+.product-preview img {
+    border-radius: 12px;
+    display: block;
+    height: auto;
+    margin: 22px auto 16px;
+    max-height: min(68vh, 640px);
+    max-width: 100%;
+    object-fit: contain;
+}
+
+.product-preview h2 {
+    font-size: 1.15rem;
+    margin: 0;
+}
+
+.product-preview__close {
+    align-items: center;
+    background: var(--color-fondo);
+    border: 1px solid var(--color-borde);
+    border-radius: 50%;
+    color: var(--color-texto-principal);
+    cursor: pointer;
+    display: flex;
+    font-size: 1.8rem;
+    height: 38px;
+    justify-content: center;
+    line-height: 1;
+    position: absolute;
+    right: 12px;
+    top: 12px;
+    width: 38px;
+}
+
+.product-preview__close:focus-visible {
+    outline: 3px solid var(--color-texto-secundario);
+    outline-offset: 3px;
+}
+
+@media (max-width: 480px) {
+    .merchandise-gallery { padding: 34px 16px 20px; }
+    .merchandise-grid { gap: 12px; grid-template-columns: repeat(2, minmax(0, 1fr)); }
+    .merchandise-card { width: 100%; }
+}
+
 .page-footer {
     position: relative;
     z-index: 100;

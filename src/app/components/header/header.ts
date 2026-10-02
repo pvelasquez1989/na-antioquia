@@ -61,9 +61,38 @@ export class Header {
     { title: 'Aniversario Grupo El Camino', src: 'Eventos/AniversariogrupoElCamino.jpeg' },
   ];
 
+  readonly merchandiseItems = [
+    {
+      titleKey: 'hoodieTitle' as const,
+      src: 'Mercaderia/Green Hoodie Product Showcase.png',
+    },
+    {
+      titleKey: 'whiteTshirtTitle' as const,
+      src: 'Mercaderia/White T-Shirt Convention Product Mockup.png',
+    },
+    {
+      titleKey: 'lilacTshirtTitle' as const,
+      src: 'Mercaderia/Lilac T-Shirt Convention Showcase.png',
+    },
+    {
+      titleKey: 'blueTshirtTitle' as const,
+      src: 'Mercaderia/Camiseta azul de convención Antioquia.png',
+    },
+    {
+      titleKey: 'capTitle' as const,
+      src: 'Mercaderia/Gorra azul con emblema de Antioquia.png',
+    },
+    {
+      titleKey: 'mugTitle' as const,
+      src: 'Mercaderia/Mug Convención de Antioquia.png',
+    },
+  ];
+  selectedMerchandiseItem?: (typeof this.merchandiseItems)[number];
+
   isPublicInfoOpen = false;
   isInstitutionsOpen = false;
   isEventsOpen = false;
+  isMerchandiseOpen = false;
   isAudioPlaying = false;
   currentAudioIndex = 0;
   currentEventIndex = 0;
@@ -108,6 +137,30 @@ export class Header {
 
   closeInstitutions() {
     this.isInstitutionsOpen = false;
+  }
+
+  openMerchandise(event: Event) {
+    event.preventDefault();
+    this.isMerchandiseOpen = true;
+  }
+
+  closeMerchandise() {
+    this.isMerchandiseOpen = false;
+    this.selectedMerchandiseItem = undefined;
+  }
+
+  openProduct(item: (typeof this.merchandiseItems)[number]) {
+    this.selectedMerchandiseItem = item;
+  }
+
+  closeProduct() {
+    this.selectedMerchandiseItem = undefined;
+  }
+
+  onMerchandiseImageError(event: Event) {
+    const image = event.target as HTMLImageElement;
+    image.hidden = true;
+    image.nextElementSibling?.removeAttribute('hidden');
   }
 
   openEvents(event: Event) {

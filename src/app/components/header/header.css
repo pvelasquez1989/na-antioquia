@@ -29,7 +29,7 @@
     display: inline-flex;
     flex-direction: column;
     align-items: center;
-    gap: 7px;
+    gap:7px;
     font-size: 0.82rem;
     font-weight: 700;
     line-height: 1.2;
@@ -89,16 +89,6 @@
     border-radius: 8px;
     outline: 3px solid #ec6739;
     outline-offset: 4px;
-}
-
-@media (max-width: 480px) {
-    .profile-title {
-        font-size: 1rem;
-    }
-
-    .quick-links {
-        gap: 22px;
-    }
 }
 
 .audio-reel-backdrop {
