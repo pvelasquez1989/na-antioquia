@@ -269,14 +269,14 @@ app-footer {
     background: #25d366;
     border-radius: 50%;
     display: inline-flex;
-    height: 42px;
+    height: 24px;
     justify-content: center;
-    width: 42px;
+    width: 24px;
 }
 
 .merchandise-gallery__contact-icon svg {
-    height: 28px;
-    width: 28px;
+    height: 16px;
+    width: 16px;
 }
 
 .merchandise-payment {
