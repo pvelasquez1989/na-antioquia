@@ -99,6 +99,7 @@
                         </span>
                     </span>
                     <span class="merchandise-card__title">{{ language.t(item.titleKey) }}</span>
+                    <span class="merchandise-card__price">{{ item.price }}</span>
                 </button>
             }
         </div>
@@ -115,6 +116,15 @@
             </a>
         </p>
 
+        <div class="merchandise-payment">
+            <p class="merchandise-payment__details">
+                <span><strong>{{ language.t('nequiPayments') }}</strong> 3013283584</span>
+            </p>
+            <p class="merchandise-payment__note">
+                {{ language.t('sendPaymentReceipt') }}
+            </p>
+        </div>
+
     </article>
 </section>
 
@@ -124,6 +134,7 @@
             <button class="product-preview__close" type="button" [attr.aria-label]="language.t('closeProduct')" (click)="closeProduct()">&times;</button>
             <img [src]="item.src" [alt]="language.t(item.titleKey)">
             <h2 id="product-preview-title">{{ language.t(item.titleKey) }}</h2>
+            <p class="product-preview__price">{{ item.price }}</p>
         </article>
     }
 </section>

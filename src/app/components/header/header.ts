@@ -63,32 +63,49 @@ export class Header {
 
   readonly merchandiseItems = [
     {
+      titleKey: 'personalizedTitle' as const,
+      src: 'Mercaderia/Personalizada.jpeg',
+      price: '$53.000 COP',
+    },
+    {
+      titleKey: 'otherColorsTitle' as const,
+      src: 'Mercaderia/Otros colores.jpeg',
+      price: '$48.000 COP',
+    },
+    {
       titleKey: 'hoodieTitle' as const,
       src: 'Mercaderia/Green Hoodie Product Showcase.png',
+      price: '$70.000 COP',
     },
     {
       titleKey: 'whiteTshirtTitle' as const,
       src: 'Mercaderia/White T-Shirt Convention Product Mockup.png',
+      price: '$48.000 COP',
     },
     {
       titleKey: 'lilacTshirtTitle' as const,
       src: 'Mercaderia/Lilac T-Shirt Convention Showcase.png',
+      price: '$48.000 COP',
     },
     {
       titleKey: 'blueTshirtTitle' as const,
       src: 'Mercaderia/Camiseta azul de convención Antioquia.png',
+      price: '$48.000 COP',
     },
     {
       titleKey: 'capTitle' as const,
       src: 'Mercaderia/Gorra azul con emblema de Antioquia.png',
+      price: '$25.000 COP',
     },
     {
       titleKey: 'redTshirtAndCapTitle' as const,
       src: 'Mercaderia/Camiseta Roja y gorra.jpeg',
+      price: 'Camiseta: $48.000 COP · Gorra: $25.000 COP',
     },
     {
       titleKey: 'mugTitle' as const,
       src: 'Mercaderia/Mug Convención de Antioquia.png',
+      price: '$25.000 COP',
     },
   ];
   selectedMerchandiseItem?: (typeof this.merchandiseItems)[number];

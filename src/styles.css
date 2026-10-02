@@ -233,7 +233,15 @@ app-footer {
     font-size: 0.9rem;
     font-weight: 700;
     margin: 0;
-    padding: 10px 12px 12px;
+    padding: 10px 12px 4px;
+}
+
+.merchandise-card__price {
+    color: var(--color-acento-fin);
+    display: block;
+    font-size: 0.82rem;
+    font-weight: 800;
+    padding: 0 8px 12px;
 }
 
 .merchandise-gallery__notice {
@@ -269,6 +277,31 @@ app-footer {
 .merchandise-gallery__contact-icon svg {
     height: 28px;
     width: 28px;
+}
+
+.merchandise-payment {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 16px;
+}
+
+.merchandise-payment__details {
+    align-items: center;
+    color: var(--color-texto-principal);
+    display: inline-flex;
+    flex-wrap: wrap;
+    font-size: 1rem;
+    gap: 8px;
+    justify-content: center;
+    margin: 0;
+}
+
+.merchandise-payment__note {
+    color: var(--color-texto-secundario);
+    font-size: 0.9rem;
+    margin: 0;
 }
 
 .merchandise-gallery__close:focus-visible {
@@ -316,6 +349,13 @@ app-footer {
 .product-preview h2 {
     font-size: 1.15rem;
     margin: 0;
+}
+
+.product-preview__price {
+    color: var(--color-acento-fin);
+    font-size: 1.05rem;
+    font-weight: 800;
+    margin: 8px 0 0;
 }
 
 .product-preview__close {
