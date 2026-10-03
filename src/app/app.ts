@@ -1,4 +1,5 @@
 import { Component, ViewChild, inject } from '@angular/core';
+import { RouterOutlet } from '@angular/router';
 import { Header } from './components/header/header';
 import { Search } from './components/search/search';
 import { ZoneList } from './components/zone-list/zone-list';
@@ -15,7 +16,8 @@ import { LanguageService } from './services/language.service';
     ZoneList,
     WhatsappFab,
     Carousel,
-    Footer
+    Footer,
+    RouterOutlet
   ],
   templateUrl: './app.html',
   styleUrl: './app.css'

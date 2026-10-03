@@ -1,15 +1,21 @@
-import { Component, ElementRef, EventEmitter, Output, ViewChild, inject } from '@angular/core';
+import { Component, DestroyRef, ElementRef, EventEmitter, Output, ViewChild, inject } from '@angular/core';
+import { takeUntilDestroyed } from '@angular/core/rxjs-interop';
+import { NavigationEnd, Router, RouterLink } from '@angular/router';
+import { filter } from 'rxjs';
 import { LanguageService } from '../../services/language.service';
 
 
 @Component({
   selector: 'app-header',
   standalone: true,
+  imports: [RouterLink],
   templateUrl: './header.html',
   styleUrl: './header.css',
 })
 export class Header {
   readonly language = inject(LanguageService);
+  private readonly router = inject(Router);
+  private readonly destroyRef = inject(DestroyRef);
   @ViewChild('publicInfoAudio') publicInfoAudio?: ElementRef<HTMLAudioElement>;
   @Output() eventsRequested = new EventEmitter<void>();
 
@@ -18,32 +24,32 @@ export class Header {
       type: 'image' as const,
       titleKey: 'serveInIpTitle' as const,
       descriptionKey: 'serveInIpDescription' as const,
-      src: 'Eventos/InvitacionServirenIP.jpeg',
+      src: 'IP/InvitacionServirenIP.jpeg',
     },
     {
       type: 'image' as const,
-      titleKey: 'serveInIpTitle' as const,
-      descriptionKey: 'serveInIpDescription' as const,
-      src: 'Eventos/comiteRelacionesPublicas.jpeg',
-      link: 'https://meet.google.com/gcm-wznp-itm',
-    },
-     {
-      type: 'audio' as const,
-      titleKey: 'publicInfoTitle' as const,
+      titleKey: 'publicInfoFlyerOne' as const,
       descriptionKey: 'publicInfoDescription' as const,
-      src: 'audios/NARCOTICOS ANONIMOS-24-Agosto.mp3',
+      src: 'IP/InfoIP1.jpeg',
+    },
+    {
+      type: 'image' as const,
+      titleKey: 'publicInfoFlyerTwo' as const,
+      descriptionKey: 'publicInfoDescription' as const,
+      src: 'IP/InfoIP2.jpeg',
     },
     {
       type: 'audio' as const,
+      displayTitleKey: 'radioProgramTitle' as const,
       titleKey: 'publicInfoTitle' as const,
       descriptionKey: 'publicInfoDescription' as const,
-      src: 'audios/NARCOTICOS ANONIMOS-10-Agosto.mp3',
+      src: 'IP/Programa de Radio 7 de Septiembre.mp3',
     },
     {
       type: 'audio' as const,
       titleKey: 'naSpotTitle' as const,
       descriptionKey: 'naSpotDescription' as const,
-      src: 'audios/CUÑA-ANTIOQUIA.mp3',
+      src: 'IP/CUÑA-ANTIOQUIA.mp3',
     },
   ];
 
@@ -119,6 +125,16 @@ export class Header {
   currentEventIndex = 0;
   private audioTimeoutId: any;
 
+  constructor() {
+    this.syncWithRoute(this.router.url, false);
+    this.router.events
+      .pipe(
+        filter((event): event is NavigationEnd => event instanceof NavigationEnd),
+        takeUntilDestroyed(this.destroyRef),
+      )
+      .subscribe((event) => this.syncWithRoute(event.urlAfterRedirects, true));
+  }
+
   get currentPublicInfoItem() {
     return this.publicInfoItems[this.currentAudioIndex];
   }
@@ -130,6 +146,10 @@ export class Header {
       return this.language.t(item.titleKey);
     }
 
+    if ('displayTitleKey' in item && item.displayTitleKey) {
+      return this.language.t(item.displayTitleKey);
+    }
+
     return item.src.split('/').pop()?.replace(/\.[^/.]+$/, '') ?? '';
   }
 
@@ -137,10 +157,17 @@ export class Header {
     return this.eventImages[this.currentEventIndex];
   }
 
-  openPublicInfo(event: Event) {
-    event.preventDefault();
-    this.currentAudioIndex = 0;
-    this.isPublicInfoOpen = true;
+  openPublicInfo() {
+    if (this.isPublicInfoOpen) {
+      this.currentAudioIndex = 0;
+    }
+  }
+
+  openEvents() {
+    const path = this.router.url.split(/[?#]/, 1)[0].replace(/\/+$/, '') || '/';
+    if (path === '/eventos') {
+      this.eventsRequested.emit();
+    }
   }
 
   closePublicInfo() {
@@ -148,25 +175,15 @@ export class Header {
       clearTimeout(this.audioTimeoutId);
     }
     this.publicInfoAudio?.nativeElement.pause();
-    this.isPublicInfoOpen = false;
-  }
-
-  openInstitutions(event: Event) {
-    event.preventDefault();
-    this.isInstitutionsOpen = true;
+    void this.router.navigateByUrl('/');
   }
 
   closeInstitutions() {
-    this.isInstitutionsOpen = false;
-  }
-
-  openMerchandise(event: Event) {
-    event.preventDefault();
-    this.isMerchandiseOpen = true;
+    void this.router.navigateByUrl('/');
   }
 
   closeMerchandise() {
-    this.isMerchandiseOpen = false;
+    void this.router.navigateByUrl('/');
     this.selectedMerchandiseItem = undefined;
   }
 
@@ -184,13 +201,32 @@ export class Header {
     image.nextElementSibling?.removeAttribute('hidden');
   }
 
-  openEvents(event: Event) {
-    event.preventDefault();
-    this.eventsRequested.emit();
-  }
-
   closeEvents() {
     this.isEventsOpen = false;
+    void this.router.navigateByUrl('/');
+  }
+
+  private syncWithRoute(url: string, notifyEvents: boolean) {
+    const path = url.split(/[?#]/, 1)[0].replace(/\/+$/, '') || '/';
+    const wasPublicInfoOpen = this.isPublicInfoOpen;
+
+    this.isPublicInfoOpen = path === '/informacion-publica';
+    this.isInstitutionsOpen = path === '/instituciones';
+    this.isMerchandiseOpen = path === '/mercaderia';
+    this.isEventsOpen = false;
+
+    if (this.isPublicInfoOpen && !wasPublicInfoOpen) {
+      this.currentAudioIndex = 0;
+    } else if (wasPublicInfoOpen && !this.isPublicInfoOpen) {
+      if (this.audioTimeoutId) {
+        clearTimeout(this.audioTimeoutId);
+      }
+      this.publicInfoAudio?.nativeElement.pause();
+    }
+
+    if (notifyEvents && path === '/eventos') {
+      this.eventsRequested.emit();
+    }
   }
 
   previousEvent(event: Event) {

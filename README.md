@@ -44,6 +44,10 @@ To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use th
 ng test
 ```
 
+## Application routes
+
+The quick links support direct URLs for `/informacion-publica`, `/instituciones`, `/eventos`, and `/mercaderia`. Hosting must serve `index.html` for these client-side routes; the `public/_redirects` file provides that fallback for compatible hosts.
+
 ## Running end-to-end tests
 
 For end-to-end (e2e) testing, run:

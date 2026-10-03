@@ -2,24 +2,24 @@
     <img class="profile-logo" src="LogoAntioquia.jpeg" [alt]="language.t('logoAlt')">
     <h1 class="profile-title">{{ language.t('directoryTitle') }}</h1>
     <nav class="quick-links" [attr.aria-label]="language.t('quickLinks')">
-        <a class="quick-link" href="#informacion-publica" [attr.aria-label]="language.t('listenPublicInfo')" (click)="openPublicInfo($event)">
+        <a class="quick-link" routerLink="/informacion-publica" [attr.aria-label]="language.t('listenPublicInfo')" (click)="openPublicInfo()">
             <span class="quick-link__circle quick-link__circle--ip" aria-hidden="true">IP</span>
             <span>{{ language.t('publicInfo') }}</span>
         </a>
 
-        <a class="quick-link" href="#hei" [attr.aria-label]="language.t('seeInstitutions')" (click)="openInstitutions($event)">
+        <a class="quick-link" routerLink="/instituciones" [attr.aria-label]="language.t('seeInstitutions')">
             <span class="quick-link__circle quick-link__circle--hei" aria-hidden="true">HeI</span>
             <span>{{ language.t('hospitals') }}</span>
         </a>
 
-        <a class="quick-link" href="#eventos" [attr.aria-label]="language.t('seeEvents')" (click)="openEvents($event)">
+        <a class="quick-link" routerLink="/eventos" [attr.aria-label]="language.t('seeEvents')" (click)="openEvents()">
             <span class="quick-link__circle quick-link__circle--events" aria-hidden="true">
                 <img src="LogoAntioquia.jpeg" alt="">
             </span>
             <span>{{ language.t('events') }}</span>
         </a>
 
-        <a class="quick-link" href="#mercaderia" [attr.aria-label]="language.t('seeMerchandise')" (click)="openMerchandise($event)">
+        <a class="quick-link" routerLink="/mercaderia" [attr.aria-label]="language.t('seeMerchandise')">
             <span class="quick-link__circle quick-link__circle--merchandise" aria-hidden="true">
                 <img src="Mercaderia/LogoConvencionAntioquia.png" alt="">
             </span>
