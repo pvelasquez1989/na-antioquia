@@ -3,7 +3,6 @@ import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-whatsapp-fab',
-  imports: [],
   templateUrl: './whatsapp-fab.html',
   styleUrl: './whatsapp-fab.css'
 })

@@ -13,7 +13,6 @@ interface CarouselImage {
 @Component({
   selector: 'app-carousel',
   standalone: true,
-  imports: [], 
   templateUrl: './carousel.html',
   styleUrls: ['./carousel.css']
 })
@@ -45,17 +44,12 @@ export class Carousel implements OnInit, OnDestroy {
   get currentMediaIsVideo() { return this.currentImage?.mediaType === 'video'; }
   get currentCursor() { return this.isPaused ? 'grab' : (this.currentImage?.link ? 'pointer' : 'default'); }
 
-  onImageLoad() {
-    console.log('✅ Imagen cargada');
-  }
-
   onImageError(event: Event) {
     const img = event.target as HTMLImageElement;
     console.error('❌ Error:', img.src);
   }
 
   onVideoPlay(event: Event) {
-    const video = event.target as HTMLVideoElement;
     this.prepareVideoAudio(event);
     this.pauseCarousel();
   }
@@ -78,7 +72,6 @@ export class Carousel implements OnInit, OnDestroy {
   onKeydownHandler() { this.stopCarousel(); }
 
   startCarousel() {
-    console.log(new Date().toString());
     this.activeImages = this.images.filter(image => this.isScheduledForToday(image));
 
     if (this.activeImages.length > 0) {
@@ -87,7 +80,6 @@ export class Carousel implements OnInit, OnDestroy {
       setTimeout(() => {
         this.isVisible = true;
         this.cdr.detectChanges(); 
-        console.log('isVisible después:', this.isVisible);
       }, 0);
 
       this.resetCarouselInterval();
@@ -133,7 +125,7 @@ export class Carousel implements OnInit, OnDestroy {
     } else {
       this.currentImageIndex++;
     }
-    // 2. AÑADIDO: Forzamos a Angular a refrescar la vista cuando el temporizador cambia de imagen automáticamente
+    // Update the view after the timer changes the active image.
     this.cdr.detectChanges(); 
   }
 
@@ -144,7 +136,6 @@ export class Carousel implements OnInit, OnDestroy {
 
   onPrevClick() {
     this.currentImageIndex = (this.currentImageIndex - 1 + this.activeImages.length) % this.activeImages.length;
-    // 3. AÑADIDO: Forzamos el refresco también al usar la flecha de atrás manualmente
     this.cdr.detectChanges(); 
     this.resetCarouselInterval();
   }

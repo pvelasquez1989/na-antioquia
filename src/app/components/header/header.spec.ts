@@ -44,6 +44,24 @@ describe('Header', () => {
     expect(flyerSources).not.toContain('Eventos/comiteRelacionesPublicas.jpeg');
   });
 
+  it('navigates through public information with previous and next controls', () => {
+    component.currentAudioIndex = 2;
+
+    component.previousAudio();
+    expect(component.currentAudioIndex).toBe(1);
+
+    component.nextAudio();
+    expect(component.currentAudioIndex).toBe(2);
+  });
+
+  it('wraps around when navigating before the first public information item', () => {
+    component.currentAudioIndex = 0;
+
+    component.previousAudio();
+
+    expect(component.currentAudioIndex).toBe(component.publicInfoItems.length - 1);
+  });
+
   it('does not include the removed August recordings in public information', () => {
     expect(component.publicInfoItems.some((item) => item.src.includes('Agosto'))).toBe(false);
   });

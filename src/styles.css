@@ -93,13 +93,59 @@ app-footer {
 
 @media (max-width: 480px) {
     .profile-title { font-size: 1rem; }
-    .quick-links { column-gap: 16px; row-gap: 18px; }
-    .quick-link__circle { height: 64px; width: 64px; }
+    .container .profile-header .quick-links {
+        column-gap: 8px;
+        grid-template-columns: repeat(4, minmax(0, 1fr));
+        row-gap: 18px;
+    }
+    .container .profile-header .quick-link__circle {
+        box-sizing: border-box;
+        height: 54px;
+        width: 54px;
+    }
+    .container app-header .profile-header .quick-link__circle--events img {
+        height: 116px;
+        left: -25px;
+        top: -19px;
+    }
+    .container .profile-header .quick-link {
+        font-size: 0.68rem;
+        line-height: 1.15;
+    }
 }
 
-@media (max-width: 380px) {
-    .quick-links { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.audio-reel__navigation {
+    inset: 50% 0 auto;
+    position: absolute;
+    transform: translateY(-50%);
+    z-index: 2;
 }
+
+.audio-reel > :not(.audio-reel__close):not(.audio-reel__navigation) { position: relative; }
+
+.audio-reel__navigation button {
+    background: transparent;
+    border: 0;
+    color: rgba(0, 48, 135, 0.7);
+    cursor: pointer;
+    display: flex;
+    font: inherit;
+    font-size: 1.5rem;
+    font-weight: 700;
+    justify-content: center;
+    padding: 16px;
+    position: absolute;
+    transition: color 0.2s ease;
+    user-select: none;
+}
+
+.audio-reel__navigation button:hover,
+.audio-reel__navigation button:focus-visible { color: var(--color-acento-fin); }
+
+.audio-reel__navigation button:focus-visible { outline: 3px solid #ec6739; outline-offset: 3px; }
+
+.audio-reel__navigation-prev { left: 0; }
+.audio-reel__navigation-next { right: 0; }
 
 .merchandise-backdrop {
     align-items: center;

@@ -32,19 +32,14 @@
 <section class="audio-reel-backdrop" [hidden]="!isPublicInfoOpen" role="dialog" aria-modal="true" aria-labelledby="audio-reel-title" (click)="closePublicInfo()">
         <article class="audio-reel" [class.audio-reel--flyer]="currentPublicInfoItem.type === 'image'" role="button" tabindex="0" [attr.aria-label]="language.t('tapCard')" (click)="handlePublicInfoClick($event)" (keydown.enter)="handlePublicInfoClick($event)" (keydown.space)="handlePublicInfoClick($event)">
             <button class="audio-reel__close" type="button" [attr.aria-label]="language.t('closePlayer')" (click)="$event.stopPropagation(); closePublicInfo()">×</button>
-            @if (currentPublicInfoItem.type === 'image') {
-                <div class="audio-reel__progress" [attr.aria-label]="language.format('audioProgress', { current: currentAudioIndex + 1, total: publicInfoItems.length })">
-                    @for (item of publicInfoItems; track item.src; let index = $index) {
-                        <span class="audio-reel__progress-item" [class.audio-reel__progress-item--active]="index === currentAudioIndex"></span>
-                    }
-                </div>
-                <img class="audio-reel__flyer" [src]="currentPublicInfoItem.src" [alt]="language.t(currentPublicInfoItem.titleKey)">
-            } @else {
             <div class="audio-reel__progress" [attr.aria-label]="language.format('audioProgress', { current: currentAudioIndex + 1, total: publicInfoItems.length })">
                 @for (item of publicInfoItems; track item.src; let index = $index) {
                     <span class="audio-reel__progress-item" [class.audio-reel__progress-item--active]="index === currentAudioIndex"></span>
                 }
             </div>
+            @if (currentPublicInfoItem.type === 'image') {
+                <img class="audio-reel__flyer" [src]="currentPublicInfoItem.src" [alt]="language.t(currentPublicInfoItem.titleKey)">
+            } @else {
             <div class="audio-reel__badge" aria-hidden="true">IP</div>
             <p class="audio-reel__eyebrow">{{ language.t('footerArea') }}</p>
             <h2 id="audio-reel-title">{{ currentPublicInfoTitle }}</h2>
@@ -66,6 +61,10 @@
                 </button>
                 </div>
             }
+            <nav class="audio-reel__navigation" [attr.aria-label]="language.t('publicInfoNavigation')">
+                <button class="audio-reel__navigation-prev" type="button" [attr.aria-label]="language.t('previousPublicInfo')" (click)="previousAudio($event)">❮</button>
+                <button class="audio-reel__navigation-next" type="button" [attr.aria-label]="language.t('nextPublicInfo')" (click)="nextAudio($event)">❯</button>
+            </nav>
         </article>
 </section>
 

@@ -21,7 +21,6 @@
       } @else if (currentImage) {
         <img 
           [src]="currentImage.src"
-          (load)="onImageLoad()"
           (error)="onImageError($event)" 
           [alt]="language.t('eventAlt')"
           (click)="onImageClick($event)"

@@ -138,8 +138,6 @@
 .audio-reel::before { right: -90px; top: -65px; }
 .audio-reel::after { bottom: -115px; left: -90px; }
 
-.audio-reel > :not(.audio-reel__close) { position: relative; }
-
 .audio-reel__close {
     align-items: center;
     background: var(--color-fondo);

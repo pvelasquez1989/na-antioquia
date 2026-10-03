@@ -3,7 +3,6 @@ import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-search',
-  imports: [],
   templateUrl: './search.html',
   styleUrl: './search.css'
 })

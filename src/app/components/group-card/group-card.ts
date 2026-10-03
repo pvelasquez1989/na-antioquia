@@ -4,7 +4,6 @@ import { LanguageService } from '../../services/language.service';
 
 @Component({
   selector: 'app-group-card',
-  imports: [],
   templateUrl: './group-card.html',
   styleUrl: './group-card.css'
 })

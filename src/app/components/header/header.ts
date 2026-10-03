@@ -264,11 +264,20 @@ export class Header {
 
   nextAudio(event?: Event) {
     event?.stopPropagation();
+    this.changePublicInfoItem(1);
+  }
+
+  previousAudio(event?: Event) {
+    event?.stopPropagation();
+    this.changePublicInfoItem(-1);
+  }
+
+  private changePublicInfoItem(direction: number) {
     if (this.audioTimeoutId) {
       clearTimeout(this.audioTimeoutId);
     }
     this.publicInfoAudio?.nativeElement.pause();
-    this.currentAudioIndex = (this.currentAudioIndex + 1) % this.publicInfoItems.length;
+    this.currentAudioIndex = (this.currentAudioIndex + direction + this.publicInfoItems.length) % this.publicInfoItems.length;
 
     if (this.currentPublicInfoItem.type !== 'audio') {
       return;
