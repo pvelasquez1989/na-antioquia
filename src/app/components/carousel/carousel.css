@@ -27,6 +27,20 @@
   align-items: center;
 }
 
+.modal-content--pdf {
+  box-sizing: border-box;
+  max-width: 1100px;
+  width: 96vw;
+  padding: 44px 16px 16px;
+}
+
+.modal-content .pdf-preview {
+  width: 100%;
+  height: min(78vh, 900px);
+  border: 0;
+  border-radius: 6px;
+}
+
 .carousel-progress {
   display: flex;
   gap: 4px;

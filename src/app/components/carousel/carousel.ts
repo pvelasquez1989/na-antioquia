@@ -1,4 +1,5 @@
 import { Component, OnInit, OnDestroy, HostListener, ChangeDetectorRef, inject } from '@angular/core';
+import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { LanguageService } from '../../services/language.service';
 
 interface CarouselImage {
@@ -7,7 +8,7 @@ interface CarouselImage {
   endDate?: string;
   link?: string;
   title?: string;
-  mediaType?: 'image' | 'video';
+  mediaType?: 'image' | 'video' | 'pdf';
 }
 
 @Component({
@@ -18,13 +19,17 @@ interface CarouselImage {
 })
 export class Carousel implements OnInit, OnDestroy {
   readonly language = inject(LanguageService);
+  private readonly sanitizer = inject(DomSanitizer);
   
   constructor(private cdr: ChangeDetectorRef) {}
 
   images: CarouselImage[] = [
-    { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-09-24', endDate: '2026-09-29', link: 'https://meet.google.com/bzt-jmky-udh' },
     { src: 'Eventos/Flayer mercaderia.jpeg', startDate: '2026-10-02', endDate: '2026-11-16' },
     { src: 'Eventos/Flayer precio y tallas.jpeg', startDate: '2026-10-03', endDate: '2026-11-16' },
+    { src: 'Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf', title: 'Guía de hoteles de Envigado', mediaType: 'pdf' },
+    { src: 'Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf', title: 'Guía de restaurantes de Envigado', mediaType: 'pdf' },
+    { src: 'Mercaderia/VideoInvitacionConvencion.mp4', title: 'Invitación a la Convención', mediaType: 'video' },
+    { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-09-24', endDate: '2026-09-29', link: 'https://meet.google.com/bzt-jmky-udh' },
     { src: 'Eventos/EventoConvencionAntioquia.jpeg', startDate: '2026-09-08', endDate: '2026-10-18' },
     { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16' },
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
@@ -42,6 +47,12 @@ export class Carousel implements OnInit, OnDestroy {
 
   get currentImage() { return this.activeImages[this.currentImageIndex]; }
   get currentMediaIsVideo() { return this.currentImage?.mediaType === 'video'; }
+  get currentMediaIsPdf() { return this.currentImage?.mediaType === 'pdf'; }
+  get currentPdfUrl(): SafeResourceUrl | null {
+    return this.currentMediaIsPdf && this.currentImage
+      ? this.sanitizer.bypassSecurityTrustResourceUrl(this.currentImage.src)
+      : null;
+  }
   get currentCursor() { return this.isPaused ? 'grab' : (this.currentImage?.link ? 'pointer' : 'default'); }
 
   onImageError(event: Event) {
@@ -52,6 +63,11 @@ export class Carousel implements OnInit, OnDestroy {
   onVideoPlay(event: Event) {
     this.prepareVideoAudio(event);
     this.pauseCarousel();
+  }
+
+  onVideoEnded() {
+    this.isPaused = false;
+    this.showNextImage();
   }
 
   prepareVideoAudio(event: Event) {
@@ -101,7 +117,7 @@ export class Carousel implements OnInit, OnDestroy {
 
   resetCarouselInterval() {
     this.clearTimer();
-    if (this.activeImages.length > 1 && !this.isPaused) {
+    if (this.activeImages.length > 1 && !this.isPaused && !this.currentMediaIsPdf && !this.currentMediaIsVideo) {
       this.carouselInterval = setInterval(() => this.showNextImage(), 6000);
     }
   }
@@ -125,13 +141,13 @@ export class Carousel implements OnInit, OnDestroy {
     } else {
       this.currentImageIndex++;
     }
+    this.resetCarouselInterval();
     // Update the view after the timer changes the active image.
     this.cdr.detectChanges(); 
   }
 
   onNextClick() {
     this.showNextImage();
-    this.resetCarouselInterval();
   }
 
   onPrevClick() {
