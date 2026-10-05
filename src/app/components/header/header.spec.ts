@@ -94,4 +94,10 @@ describe('Header', () => {
 
     expect(eventsRequested).toHaveBeenCalledTimes(2);
   });
+
+  it('uses the favicon for the events quick-link icon', () => {
+    const eventsIcon = fixture.nativeElement.querySelector('.quick-link__circle--events img');
+
+    expect(eventsIcon.getAttribute('src')).toBe('favicon.ico');
+  });
 });

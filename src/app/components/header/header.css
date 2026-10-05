@@ -74,12 +74,9 @@
 }
 
 .quick-link__circle--events img {
-    height: 160px;
-    left: -35px;
-    max-width: none;
-    position: absolute;
-    top: -26px;
-    width: auto;
+    height: 72px;
+    object-fit: contain;
+    width: 72px;
 }
 
 .quick-link:hover .quick-link__circle,
