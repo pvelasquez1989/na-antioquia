@@ -1,6 +1,6 @@
 import { Component, OnInit, OnDestroy, HostListener, ChangeDetectorRef, inject } from '@angular/core';
-import { DomSanitizer, SafeResourceUrl } from '@angular/platform-browser';
 import { LanguageService } from '../../services/language.service';
+import { PdfPreview } from '../pdf-preview/pdf-preview';
 
 interface CarouselImage {
   src: string;
@@ -14,12 +14,12 @@ interface CarouselImage {
 @Component({
   selector: 'app-carousel',
   standalone: true,
+  imports: [PdfPreview],
   templateUrl: './carousel.html',
   styleUrls: ['./carousel.css']
 })
 export class Carousel implements OnInit, OnDestroy {
   readonly language = inject(LanguageService);
-  private readonly sanitizer = inject(DomSanitizer);
   
   constructor(private cdr: ChangeDetectorRef) {}
 
@@ -48,11 +48,6 @@ export class Carousel implements OnInit, OnDestroy {
   get currentImage() { return this.activeImages[this.currentImageIndex]; }
   get currentMediaIsVideo() { return this.currentImage?.mediaType === 'video'; }
   get currentMediaIsPdf() { return this.currentImage?.mediaType === 'pdf'; }
-  get currentPdfUrl(): SafeResourceUrl | null {
-    return this.currentMediaIsPdf && this.currentImage
-      ? this.sanitizer.bypassSecurityTrustResourceUrl(this.currentImage.src)
-      : null;
-  }
   get currentCursor() { return this.isPaused ? 'grab' : (this.currentImage?.link ? 'pointer' : 'default'); }
 
   onImageError(event: Event) {

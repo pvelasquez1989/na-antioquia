@@ -31,14 +31,15 @@
   box-sizing: border-box;
   max-width: 1100px;
   width: 96vw;
-  padding: 44px 16px 16px;
+  height: min(92dvh, 900px);
+  padding: 44px 12px 12px;
 }
 
-.modal-content .pdf-preview {
+.modal-content--pdf app-pdf-preview {
+  display: block;
   width: 100%;
-  height: min(78vh, 900px);
-  border: 0;
-  border-radius: 6px;
+  flex: 1;
+  min-height: 0;
 }
 
 .carousel-progress {

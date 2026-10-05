@@ -19,7 +19,7 @@
           Your browser does not support video playback.
         </video>
       } @else if (currentImage && currentMediaIsPdf) {
-        <iframe class="pdf-preview" [src]="currentPdfUrl" [title]="currentImage.title ?? 'Vista previa del PDF'"></iframe>
+        <app-pdf-preview [src]="currentImage.src" [title]="currentImage.title ?? 'Vista previa del PDF'"></app-pdf-preview>
       } @else if (currentImage) {
         <img 
           [src]="currentImage.src"

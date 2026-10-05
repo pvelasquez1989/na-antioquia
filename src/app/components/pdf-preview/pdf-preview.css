@@ -1,0 +1,44 @@
+:host {
+  display: block;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.pdf-preview,
+.pdf-pages {
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.pdf-preview {
+  display: flex;
+  overflow: hidden;
+  flex-direction: column;
+  border-radius: 6px;
+  background: #eef1f5;
+}
+
+.pdf-pages {
+  display: flex;
+  overflow: auto;
+  flex: 1;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.pdf-state {
+  margin: 16px;
+  color: #252525;
+  text-align: center;
+}
+
+.pdf-state a {
+  color: #003087;
+  text-decoration: underline;
+}

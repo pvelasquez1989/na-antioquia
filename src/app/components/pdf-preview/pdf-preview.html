@@ -1,0 +1,13 @@
+<section class="pdf-preview" [attr.aria-label]="title()">
+  <div #pages class="pdf-pages">
+    @if (isLoading()) {
+      <p class="pdf-state" role="status">{{ language.t('pdfLoading') }}</p>
+    }
+    @if (hasError()) {
+      <div class="pdf-state" role="alert">
+        <p>{{ language.t('pdfPreviewError') }}</p>
+        <a [href]="src()" target="_blank" rel="noopener">{{ language.t('openPdf') }}</a>
+      </div>
+    }
+  </div>
+</section>
