@@ -146,7 +146,7 @@ export const NA_ZONES: Zone[] = [
         mapLink: 'https://www.google.com/maps/search/?api=1&query=Carrera+78A+%2395-55+Medellin',
         address: 'Cra 78A #95-55 J.A.C. San Martín de Porres',
         schedules: [
-          { days: 'Martes:', hours: '7:30 P.M.' }
+          { days: 'Martes y Miércoles:', hours: '7:30 P.M.' }
         ]
       },
       {
