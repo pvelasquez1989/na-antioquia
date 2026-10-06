@@ -56,7 +56,8 @@ export const NA_ZONES: Zone[] = [
           { days: 'Martes:', hours: '7:00P.M. Taller de Pasos<br>(Híbrida)' },
           { days: 'Jueves:', hours: '7:00P.M. (Híbrida)' },
           { days: 'Sábado:', hours: '7:00P.M. (Híbrida)' }
-        ]
+        ],
+        virtualLinks: [{ text: 'Unirse a la reunión híbrida (Google Meet)', url: 'https://meet.google.com/bzt-jmky-udh' }]
       },
       {
         name: 'Vivir Limpios',
