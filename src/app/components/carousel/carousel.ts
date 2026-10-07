@@ -24,7 +24,7 @@ export class Carousel implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   images: CarouselImage[] = [
-    { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-10-06', endDate: '2026-10-07', link: 'https://meet.google.com/bzt-jmky-udh' },
+    { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-10-06', endDate: '2026-10-06', link: 'https://meet.google.com/bzt-jmky-udh' },
     { src: 'Eventos/Flayer mercaderia.jpeg', startDate: '2026-10-02', endDate: '2026-11-16' },
     { src: 'Eventos/Flayer precio y tallas.jpeg', startDate: '2026-10-03', endDate: '2026-11-16' },
     { src: 'Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf', title: 'Guía de hoteles de Envigado', mediaType: 'pdf' },
