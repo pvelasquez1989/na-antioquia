@@ -21,17 +21,27 @@ describe('Carousel', () => {
   });
 
   it('shows the price flyers, PDF previews, and convention video in order', () => {
-    expect(component.images.slice(0, 5).map(({ src }) => src)).toEqual([
-      'Eventos/Flayer mercaderia.jpeg',
-      'Eventos/Flayer precio y tallas.jpeg',
-      'Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf',
-      'Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf',
-      'Mercaderia/VideoInvitacionConvencion.mp4',
-    ]);
+    const contentSources = component.images.map(({ src }) => src);
+
+    expect(contentSources.indexOf('Eventos/Flayer mercaderia.jpeg')).toBeLessThan(contentSources.indexOf('Eventos/Flayer precio y tallas.jpeg'));
+    expect(contentSources.indexOf('Eventos/Flayer precio y tallas.jpeg')).toBeLessThan(contentSources.indexOf('Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf'));
+    expect(contentSources.indexOf('Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf')).toBeLessThan(contentSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf'));
+    expect(contentSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf')).toBeLessThan(contentSources.indexOf('Mercaderia/VideoInvitacionConvencion.mp4'));
+  });
+
+  it('schedules the new event flyers from today through their final event dates', () => {
+    expect(component.images.find(({ src }) => src === 'Eventos/VivirLimpios.jpeg')).toMatchObject({
+      startDate: '2026-10-13',
+      endDate: '2026-10-16',
+    });
+    expect(component.images.find(({ src }) => src === 'Eventos/LaGranOportunidad.jpeg')).toMatchObject({
+      startDate: '2026-10-13',
+      endDate: '2026-10-14',
+    });
   });
 
   it('keeps PDF previews visible until the user advances the carousel', () => {
-    component.activeImages = [component.images[2]];
+    component.activeImages = component.images.filter(({ mediaType }) => mediaType === 'pdf').slice(0, 1);
 
     component.resetCarouselInterval();
 
@@ -40,7 +50,10 @@ describe('Carousel', () => {
   });
 
   it('keeps the video visible until playback ends', () => {
-    component.activeImages = [component.images[4], component.images[5]];
+    component.activeImages = [
+      ...component.images.filter(({ mediaType }) => mediaType === 'video'),
+      ...component.images.filter(({ mediaType }) => mediaType !== 'video').slice(0, 1),
+    ];
 
     component.resetCarouselInterval();
 
@@ -49,7 +62,7 @@ describe('Carousel', () => {
 
     component.onVideoEnded();
 
-    expect(component.currentImage).toBe(component.images[5]);
+    expect(component.currentImage).toBe(component.activeImages[1]);
     component.clearTimer();
   });
 });
