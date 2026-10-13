@@ -40,6 +40,20 @@ describe('Carousel', () => {
     });
   });
 
+  it('schedules the merchandise table flyer from today through November 16', () => {
+    expect(component.images.find(({ src }) => src === 'Mercaderia/MesaMercaderia.jpeg')).toMatchObject({
+      startDate: '2026-10-13',
+      endDate: '2026-11-16',
+    });
+  });
+
+  it('schedules the recent arrivals flyer from today through November 16', () => {
+    expect(component.images.find(({ src }) => src === 'Eventos/RecienLlegados.jpeg')).toMatchObject({
+      startDate: '2026-10-13',
+      endDate: '2026-11-16',
+    });
+  });
+
   it('keeps PDF previews visible until the user advances the carousel', () => {
     component.activeImages = component.images.filter(({ mediaType }) => mediaType === 'pdf').slice(0, 1);
 
