@@ -25,7 +25,7 @@ export class Carousel implements OnInit, OnDestroy {
 
   images: CarouselImage[] = [
     { src: 'Eventos/NoMasSolos.jpeg', startDate: '2026-10-19', endDate: '2026-10-25' },
-    { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-10-10', endDate: '2026-10-13', link: 'https://meet.google.com/bzt-jmky-udh' },
+    { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-10-20', endDate: '2026-10-20', link: 'https://meet.google.com/bzt-jmky-udh' },
     { src: 'Eventos/RecienLlegados.jpeg', startDate: '2026-10-13', endDate: '2026-11-16' },
     { src: 'Eventos/Flayer mercaderia.jpeg', startDate: '2026-10-02', endDate: '2026-11-16' },
     { src: 'Eventos/Flayer precio y tallas.jpeg', startDate: '2026-10-03', endDate: '2026-11-16' },
@@ -33,7 +33,6 @@ export class Carousel implements OnInit, OnDestroy {
     { src: 'Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf', title: 'Guía de hoteles de Envigado', mediaType: 'pdf' },
     { src: 'Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf', title: 'Guía de restaurantes de Envigado', mediaType: 'pdf' },
     { src: 'Mercaderia/VideoInvitacionConvencion.mp4', title: 'Invitación a la Convención', mediaType: 'video' },
-    { src: 'Eventos/EventoConvencionAntioquia.jpeg', startDate: '2026-10-10', endDate: '2026-11-16' },
     { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-06-23', endDate: '2026-11-16' },
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
     { src: 'Eventos/QRUltimaEdicion.jpeg', startDate: '2026-07-26', endDate: '2027-07-31' },
