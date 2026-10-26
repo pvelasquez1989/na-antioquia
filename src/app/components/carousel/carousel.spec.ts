@@ -54,6 +54,17 @@ describe('Carousel', () => {
     });
   });
 
+  it('schedules the convention welcome and talent flyers through November 7', () => {
+    expect(component.images.find(({ src }) => src === 'Eventos/BienvenidaConvecion.jpeg')).toMatchObject({
+      startDate: '2026-10-26',
+      endDate: '2026-11-07',
+    });
+    expect(component.images.find(({ src }) => src === 'Eventos/Talentos.jpeg')).toMatchObject({
+      startDate: '2026-10-26',
+      endDate: '2026-11-07',
+    });
+  });
+
   it('keeps PDF previews visible until the user advances the carousel', () => {
     component.activeImages = component.images.filter(({ mediaType }) => mediaType === 'pdf').slice(0, 1);
 
