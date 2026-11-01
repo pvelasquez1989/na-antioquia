@@ -24,9 +24,10 @@ export class Carousel implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   images: CarouselImage[] = [
+    { src: 'Eventos/CaminataEcologicaFlyer.jpeg', startDate: '2026-11-01', endDate: '2026-11-12' },
+    { src: 'Eventos/CaminataEcologicaVideo.mp4', startDate: '2026-11-01', endDate: '2026-11-12', title: 'Caminata ecológica', mediaType: 'video' },
     { src: 'Eventos/BienvenidaConvecion.jpeg', startDate: '2026-10-26', endDate: '2026-11-07' },
     { src: 'Eventos/Talentos.jpeg', startDate: '2026-10-26', endDate: '2026-11-07' },
-    { src: 'Eventos/NoMasSolos.jpeg', startDate: '2026-10-19', endDate: '2026-10-25' },
     { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-10-20', endDate: '2026-10-20', link: 'https://meet.google.com/bzt-jmky-udh' },
     { src: 'Eventos/RecienLlegados.jpeg', startDate: '2026-10-13', endDate: '2026-11-16' },
     { src: 'Eventos/Flayer mercaderia.jpeg', startDate: '2026-10-02', endDate: '2026-11-16' },

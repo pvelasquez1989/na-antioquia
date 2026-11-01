@@ -29,6 +29,18 @@ describe('Carousel', () => {
     expect(contentSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf')).toBeLessThan(contentSources.indexOf('Mercaderia/VideoInvitacionConvencion.mp4'));
   });
 
+  it('schedules the ecological walk flyer and video from November 1 through November 12', () => {
+    expect(component.images.find(({ src }) => src === 'Eventos/CaminataEcologicaFlyer.jpeg')).toMatchObject({
+      startDate: '2026-11-01',
+      endDate: '2026-11-12',
+    });
+    expect(component.images.find(({ src }) => src === 'Eventos/CaminataEcologicaVideo.mp4')).toMatchObject({
+      startDate: '2026-11-01',
+      endDate: '2026-11-12',
+      mediaType: 'video',
+    });
+  });
+
   it('schedules the new event flyers from today through their final event dates', () => {
     expect(component.images.find(({ src }) => src === 'Eventos/VivirLimpios.jpeg')).toMatchObject({
       startDate: '2026-10-13',
