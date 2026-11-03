@@ -40,6 +40,12 @@ export class Header {
     },
     {
       type: 'audio' as const,
+      titleKey: 'publicInfoTitle' as const,
+      descriptionKey: 'publicInfoDescription' as const,
+      src: 'IP/NARCOTICOS 19 DE OCTUBRE DE 2026.mp3',
+    },
+    {
+      type: 'audio' as const,
       displayTitleKey: 'radioProgramTitle' as const,
       titleKey: 'publicInfoTitle' as const,
       descriptionKey: 'publicInfoDescription' as const,

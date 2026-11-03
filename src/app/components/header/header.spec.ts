@@ -27,6 +27,10 @@ describe('Header', () => {
     expect(component.publicInfoItems.some((item) => item.src === 'IP/Programa de Radio 7 de Septiembre.mp3')).toBe(true);
   });
 
+  it('includes the October 19 narcotics audio in public information', () => {
+    expect(component.publicInfoItems.some((item) => item.src === 'IP/NARCOTICOS 19 DE OCTUBRE DE 2026.mp3')).toBe(true);
+  });
+
   it('shows the requested title for the September 7 radio program', () => {
     component.currentAudioIndex = component.publicInfoItems.findIndex((item) => item.src === 'IP/Programa de Radio 7 de Septiembre.mp3');
 
