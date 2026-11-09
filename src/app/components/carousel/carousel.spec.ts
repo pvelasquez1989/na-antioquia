@@ -24,26 +24,26 @@ describe('Carousel', () => {
     const eventSources = component.images.map(({ src }) => src);
     const conventionSources = component.conventionImages.map(({ src }) => src);
 
-    expect(conventionSources).toContain('Eventos/BienvenidaConvecion.jpeg');
-    expect(conventionSources).toContain('Eventos/Talentos.jpeg');
     expect(conventionSources).toContain('Eventos/InscripcionConvencion.jpeg');
     expect(conventionSources).toContain('Eventos/Flayer mercaderia.jpeg');
     expect(conventionSources).toContain('Eventos/Flayer precio y tallas.jpeg');
+    expect(conventionSources).toContain('Eventos/CaminataEcologicaFlyer.jpeg');
+    expect(conventionSources).toContain('Eventos/CaminataEcologicaVideo.mp4');
     expect(conventionSources.indexOf('Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf')).toBeLessThan(conventionSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf'));
     expect(conventionSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf')).toBeLessThan(conventionSources.indexOf('Mercaderia/VideoInvitacionConvencion.mp4'));
-    expect(eventSources).not.toContain('Eventos/BienvenidaConvecion.jpeg');
-    expect(eventSources).not.toContain('Eventos/Talentos.jpeg');
     expect(eventSources).not.toContain('Eventos/InscripcionConvencion.jpeg');
     expect(eventSources).not.toContain('Eventos/Flayer mercaderia.jpeg');
     expect(eventSources).not.toContain('Eventos/Flayer precio y tallas.jpeg');
+    expect(eventSources).not.toContain('Eventos/CaminataEcologicaFlyer.jpeg');
+    expect(eventSources).not.toContain('Eventos/CaminataEcologicaVideo.mp4');
   });
 
   it('schedules the ecological walk flyer and video from November 1 through November 12', () => {
-    expect(component.images.find(({ src }) => src === 'Eventos/CaminataEcologicaFlyer.jpeg')).toMatchObject({
+    expect(component.conventionImages.find(({ src }) => src === 'Eventos/CaminataEcologicaFlyer.jpeg')).toMatchObject({
       startDate: '2026-11-01',
       endDate: '2026-11-12',
     });
-    expect(component.images.find(({ src }) => src === 'Eventos/CaminataEcologicaVideo.mp4')).toMatchObject({
+    expect(component.conventionImages.find(({ src }) => src === 'Eventos/CaminataEcologicaVideo.mp4')).toMatchObject({
       startDate: '2026-11-01',
       endDate: '2026-11-12',
       mediaType: 'video',
@@ -69,8 +69,8 @@ describe('Carousel', () => {
 
   it('keeps the video visible until playback ends', () => {
     component.activeImages = [
-      ...component.images.filter(({ mediaType }) => mediaType === 'video'),
-      ...component.images.filter(({ mediaType }) => mediaType !== 'video').slice(0, 1),
+      ...component.conventionImages.filter(({ mediaType }) => mediaType === 'video'),
+      ...component.conventionImages.filter(({ mediaType }) => mediaType !== 'video').slice(0, 1),
     ];
 
     component.resetCarouselInterval();

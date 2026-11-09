@@ -27,8 +27,6 @@ export class Carousel implements OnInit, OnDestroy {
     { src: 'Eventos/TallerOlas.jpeg', startDate: '2026-11-06', endDate: '2026-11-10' },
     { src: 'Eventos/Padrinazgo.jpeg', startDate: '2026-11-06', endDate: '2026-12-05' },
     { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-11-03', endDate: '2026-11-03', link: 'https://meet.google.com/bzt-jmky-udh' },
-    { src: 'Eventos/CaminataEcologicaFlyer.jpeg', startDate: '2026-11-01', endDate: '2026-11-12' },
-    { src: 'Eventos/CaminataEcologicaVideo.mp4', startDate: '2026-11-01', endDate: '2026-11-12', title: 'Caminata ecológica', mediaType: 'video' },
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
     { src: 'Eventos/QRUltimaEdicion.jpeg', startDate: '2026-07-26', endDate: '2027-07-31' },
     { src: 'Eventos/MaratonicaLosLazos.jpeg', startDate: '2026-07-07', endDate: '2026-12-31' },
@@ -36,6 +34,8 @@ export class Carousel implements OnInit, OnDestroy {
   ];
 
   readonly conventionImages: CarouselImage[] = [
+    { src: 'Eventos/CaminataEcologicaFlyer.jpeg', startDate: '2026-11-01', endDate: '2026-11-12', title: 'Caminata ecológica' },
+    { src: 'Eventos/CaminataEcologicaVideo.mp4', startDate: '2026-11-01', endDate: '2026-11-12', title: 'Caminata ecológica', mediaType: 'video' },
     { src: 'Eventos/InscripcionConvencion.jpeg', title: 'Inscripción a la Convención' },
     { src: 'Eventos/RecienLlegados.jpeg', title: 'Nuevos productos de la Convención' },
     { src: 'Eventos/Flayer mercaderia.jpeg', title: 'Mercadería de la Convención' },
