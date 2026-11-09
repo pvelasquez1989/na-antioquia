@@ -21,7 +21,7 @@
 .quick-links {
     display: grid;
     gap: 18px 8px;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(72px, 1fr));
 }
 
 .quick-link {
@@ -77,6 +77,12 @@
     height: 72px;
     object-fit: contain;
     width: 72px;
+}
+
+.quick-link__circle--convention img {
+    height: 68px;
+    object-fit: contain;
+    width: 68px;
 }
 
 .quick-link:hover .quick-link__circle,

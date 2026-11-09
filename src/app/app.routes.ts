@@ -9,6 +9,7 @@ export const routes: Routes = [
   { path: 'informacion-publica', ...sectionRoute },
   { path: 'instituciones', ...sectionRoute },
   { path: 'eventos', ...sectionRoute },
+  { path: 'convencion', ...sectionRoute },
   { path: 'mercaderia', ...sectionRoute },
   { path: '**', redirectTo: '' },
 ];

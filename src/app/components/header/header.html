@@ -19,6 +19,13 @@
             <span>{{ language.t('events') }}</span>
         </a>
 
+        <a class="quick-link" routerLink="/convencion" [attr.aria-label]="language.t('seeConvention')" (click)="openConvention()">
+            <span class="quick-link__circle quick-link__circle--convention" aria-hidden="true">
+                <img src="Mercaderia/LogoConvencionAntioquia.png" alt="">
+            </span>
+            <span>{{ language.t('convention') }}</span>
+        </a>
+
         <a class="quick-link" routerLink="/mercaderia" [attr.aria-label]="language.t('seeMerchandise')">
             <span class="quick-link__circle quick-link__circle--merchandise" aria-hidden="true">
                 <img src="Mercaderia/LogoConvencionAntioquia.png" alt="">

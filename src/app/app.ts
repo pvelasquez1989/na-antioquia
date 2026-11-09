@@ -36,4 +36,8 @@ export class App {
   openEvents() {
     this.carousel?.startCarousel();
   }
+
+  openConvention() {
+    this.carousel?.startCarousel('convention');
+  }
 }

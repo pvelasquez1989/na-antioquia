@@ -20,13 +20,22 @@ describe('Carousel', () => {
     expect(component).toBeTruthy();
   });
 
-  it('shows the price flyers, PDF previews, and convention video in order', () => {
-    const contentSources = component.images.map(({ src }) => src);
+  it('keeps convention content separate from general events', () => {
+    const eventSources = component.images.map(({ src }) => src);
+    const conventionSources = component.conventionImages.map(({ src }) => src);
 
-    expect(contentSources.indexOf('Eventos/Flayer mercaderia.jpeg')).toBeLessThan(contentSources.indexOf('Eventos/Flayer precio y tallas.jpeg'));
-    expect(contentSources.indexOf('Eventos/Flayer precio y tallas.jpeg')).toBeLessThan(contentSources.indexOf('Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf'));
-    expect(contentSources.indexOf('Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf')).toBeLessThan(contentSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf'));
-    expect(contentSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf')).toBeLessThan(contentSources.indexOf('Mercaderia/VideoInvitacionConvencion.mp4'));
+    expect(conventionSources).toContain('Eventos/BienvenidaConvecion.jpeg');
+    expect(conventionSources).toContain('Eventos/Talentos.jpeg');
+    expect(conventionSources).toContain('Eventos/InscripcionConvencion.jpeg');
+    expect(conventionSources).toContain('Eventos/Flayer mercaderia.jpeg');
+    expect(conventionSources).toContain('Eventos/Flayer precio y tallas.jpeg');
+    expect(conventionSources.indexOf('Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf')).toBeLessThan(conventionSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf'));
+    expect(conventionSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf')).toBeLessThan(conventionSources.indexOf('Mercaderia/VideoInvitacionConvencion.mp4'));
+    expect(eventSources).not.toContain('Eventos/BienvenidaConvecion.jpeg');
+    expect(eventSources).not.toContain('Eventos/Talentos.jpeg');
+    expect(eventSources).not.toContain('Eventos/InscripcionConvencion.jpeg');
+    expect(eventSources).not.toContain('Eventos/Flayer mercaderia.jpeg');
+    expect(eventSources).not.toContain('Eventos/Flayer precio y tallas.jpeg');
   });
 
   it('schedules the ecological walk flyer and video from November 1 through November 12', () => {
@@ -41,44 +50,16 @@ describe('Carousel', () => {
     });
   });
 
-  it('schedules the new event flyers from today through their final event dates', () => {
-    expect(component.images.find(({ src }) => src === 'Eventos/VivirLimpios.jpeg')).toMatchObject({
-      startDate: '2026-10-13',
-      endDate: '2026-10-16',
-    });
-    expect(component.images.find(({ src }) => src === 'Eventos/LaGranOportunidad.jpeg')).toMatchObject({
-      startDate: '2026-10-13',
-      endDate: '2026-10-14',
-    });
-  });
+  it('opens the dedicated convention gallery with its logo context', () => {
+    component.startCarousel('convention');
 
-  it('schedules the merchandise table flyer from today through November 16', () => {
-    expect(component.images.find(({ src }) => src === 'Mercaderia/MesaMercaderia.jpeg')).toMatchObject({
-      startDate: '2026-10-13',
-      endDate: '2026-11-16',
-    });
-  });
-
-  it('schedules the recent arrivals flyer from today through November 16', () => {
-    expect(component.images.find(({ src }) => src === 'Eventos/RecienLlegados.jpeg')).toMatchObject({
-      startDate: '2026-10-13',
-      endDate: '2026-11-16',
-    });
-  });
-
-  it('schedules the convention welcome and talent flyers through November 7', () => {
-    expect(component.images.find(({ src }) => src === 'Eventos/BienvenidaConvecion.jpeg')).toMatchObject({
-      startDate: '2026-10-26',
-      endDate: '2026-11-07',
-    });
-    expect(component.images.find(({ src }) => src === 'Eventos/Talentos.jpeg')).toMatchObject({
-      startDate: '2026-10-26',
-      endDate: '2026-11-07',
-    });
+    expect(component.isConventionView).toBe(true);
+    expect(component.activeImages).toEqual(component.conventionImages);
+    component.clearTimer();
   });
 
   it('keeps PDF previews visible until the user advances the carousel', () => {
-    component.activeImages = component.images.filter(({ mediaType }) => mediaType === 'pdf').slice(0, 1);
+    component.activeImages = component.conventionImages.filter(({ mediaType }) => mediaType === 'pdf').slice(0, 1);
 
     component.resetCarouselInterval();
 

@@ -18,6 +18,7 @@ export class Header {
   private readonly destroyRef = inject(DestroyRef);
   @ViewChild('publicInfoAudio') publicInfoAudio?: ElementRef<HTMLAudioElement>;
   @Output() eventsRequested = new EventEmitter<void>();
+  @Output() conventionRequested = new EventEmitter<void>();
 
   readonly publicInfoItems = [
     {
@@ -62,12 +63,10 @@ export class Header {
   readonly eventImages = [
     { title: 'Visión de Esperanza - Convocatoria', src: 'Eventos/VisionDeEsperanzaConvocatoria.jpeg' },
     { title: 'Última Edición', src: 'Eventos/QRUltimaEdicion.jpeg' },
-    { title: 'Postulación de Oradores - Convención', src: 'Eventos/PostulacionOradoresConvencion.jpeg' },
     { title: 'Otra Oportunidad', src: 'Eventos/OtraOportunidad.jpeg' },
     { title: 'Maratónica Los Lazos', src: 'Eventos/MaratonicaLosLazos.jpeg' },
     { title: 'Maratónica Grupo Vida', src: 'Eventos/MaratonicaGrupoVida.jpeg' },
     { title: 'La Unidad Experimental', src: 'Eventos/LaUnidadExperimental.jpeg' },
-    { title: 'Inscripción Convención', src: 'Eventos/InscripcionConvencion.jpeg' },
     { title: 'Comuna 13', src: 'Eventos/Comuna13.jpeg' },
     { title: 'CLANA 2027', src: 'Eventos/Clana2027.jpeg' },
     { title: 'Aniversario Grupo El Camino', src: 'Eventos/AniversariogrupoElCamino.jpeg' },
@@ -176,6 +175,13 @@ export class Header {
     }
   }
 
+  openConvention() {
+    const path = this.router.url.split(/[?#]/, 1)[0].replace(/\/+$/, '') || '/';
+    if (path === '/convencion') {
+      this.conventionRequested.emit();
+    }
+  }
+
   closePublicInfo() {
     if (this.audioTimeoutId) {
       clearTimeout(this.audioTimeoutId);
@@ -232,6 +238,9 @@ export class Header {
 
     if (notifyEvents && path === '/eventos') {
       this.eventsRequested.emit();
+    }
+    if (notifyEvents && path === '/convencion') {
+      this.conventionRequested.emit();
     }
   }
 

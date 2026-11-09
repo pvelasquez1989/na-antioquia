@@ -99,9 +99,27 @@ describe('Header', () => {
     expect(eventsRequested).toHaveBeenCalledTimes(2);
   });
 
+  it('opens the convention carousel when navigating to its route', async () => {
+    const conventionRequested = vi.spyOn(component.conventionRequested, 'emit');
+
+    await TestBed.inject(Router).navigateByUrl('/convencion');
+
+    expect(conventionRequested).toHaveBeenCalledOnce();
+
+    component.openConvention();
+
+    expect(conventionRequested).toHaveBeenCalledTimes(2);
+  });
+
   it('uses the favicon for the events quick-link icon', () => {
     const eventsIcon = fixture.nativeElement.querySelector('.quick-link__circle--events img');
 
     expect(eventsIcon.getAttribute('src')).toBe('favicon.ico');
+  });
+
+  it('uses the convention logo for the convention quick-link icon', () => {
+    const conventionIcon = fixture.nativeElement.querySelector('.quick-link__circle--convention img');
+
+    expect(conventionIcon.getAttribute('src')).toBe('Mercaderia/LogoConvencionAntioquia.png');
   });
 });
