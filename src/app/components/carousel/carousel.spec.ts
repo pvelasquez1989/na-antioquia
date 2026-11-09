@@ -29,6 +29,8 @@ describe('Carousel', () => {
     expect(conventionSources).toContain('Eventos/Flayer precio y tallas.jpeg');
     expect(conventionSources).toContain('Eventos/CaminataEcologicaFlyer.jpeg');
     expect(conventionSources).toContain('Eventos/CaminataEcologicaVideo.mp4');
+    expect(conventionSources).toContain('Eventos/Bienvenida.jpeg');
+    expect(conventionSources).toContain('Eventos/Programate.jpeg');
     expect(conventionSources.indexOf('Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf')).toBeLessThan(conventionSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf'));
     expect(conventionSources.indexOf('Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf')).toBeLessThan(conventionSources.indexOf('Mercaderia/VideoInvitacionConvencion.mp4'));
     expect(eventSources).not.toContain('Eventos/InscripcionConvencion.jpeg');
@@ -36,6 +38,19 @@ describe('Carousel', () => {
     expect(eventSources).not.toContain('Eventos/Flayer precio y tallas.jpeg');
     expect(eventSources).not.toContain('Eventos/CaminataEcologicaFlyer.jpeg');
     expect(eventSources).not.toContain('Eventos/CaminataEcologicaVideo.mp4');
+    expect(eventSources).not.toContain('Eventos/Bienvenida.jpeg');
+    expect(eventSources).not.toContain('Eventos/Programate.jpeg');
+  });
+
+  it('schedules the convention welcome and program flyers from November 9 through November 16', () => {
+    expect(component.conventionImages.find(({ src }) => src === 'Eventos/Bienvenida.jpeg')).toMatchObject({
+      startDate: '2026-11-09',
+      endDate: '2026-11-16',
+    });
+    expect(component.conventionImages.find(({ src }) => src === 'Eventos/Programate.jpeg')).toMatchObject({
+      startDate: '2026-11-09',
+      endDate: '2026-11-16',
+    });
   });
 
   it('schedules the ecological walk flyer and video from November 1 through November 12', () => {

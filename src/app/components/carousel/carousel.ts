@@ -34,6 +34,8 @@ export class Carousel implements OnInit, OnDestroy {
   ];
 
   readonly conventionImages: CarouselImage[] = [
+    { src: 'Eventos/Bienvenida.jpeg', startDate: '2026-11-09', endDate: '2026-11-16', title: 'Bienvenida a la Convención' },
+    { src: 'Eventos/Programate.jpeg', startDate: '2026-11-09', endDate: '2026-11-16', title: 'Prográmate para la Convención' },
     { src: 'Eventos/CaminataEcologicaFlyer.jpeg', startDate: '2026-11-01', endDate: '2026-11-12', title: 'Caminata ecológica' },
     { src: 'Eventos/CaminataEcologicaVideo.mp4', startDate: '2026-11-01', endDate: '2026-11-12', title: 'Caminata ecológica', mediaType: 'video' },
     { src: 'Eventos/InscripcionConvencion.jpeg', title: 'Inscripción a la Convención' },
