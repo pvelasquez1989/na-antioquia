@@ -24,7 +24,7 @@ export class Carousel implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   images: CarouselImage[] = [
-    { src: 'Eventos/TallerOlas.jpeg', startDate: '2026-11-06', endDate: '2026-11-10' },
+    { src: 'Eventos/MaratonicaOlas.jpeg', startDate: '2026-11-06', endDate: '2026-11-14' },
     { src: 'Eventos/Padrinazgo.jpeg', startDate: '2026-11-06', endDate: '2026-12-05' },
     { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-11-03', endDate: '2026-11-03', link: 'https://meet.google.com/bzt-jmky-udh' },
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
