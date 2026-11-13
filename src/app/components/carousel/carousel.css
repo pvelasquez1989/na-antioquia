@@ -42,6 +42,31 @@
   min-height: 0;
 }
 
+.modal-content--startup-flyer {
+  box-sizing: border-box;
+  background: transparent;
+  box-shadow: none;
+  max-width: none;
+  max-height: 100dvh;
+  overflow: visible;
+  padding: 0;
+  width: auto;
+}
+
+.modal-content--startup-flyer .close-button {
+  position: fixed;
+  top: max(12px, env(safe-area-inset-top));
+  right: max(12px, env(safe-area-inset-right));
+  z-index: 20;
+  height: auto;
+  padding: 8px 14px;
+  border-radius: 50%;
+  background: rgba(0, 0, 0, 0.65);
+  color: #fff;
+  font-size: 40px;
+  line-height: 1;
+}
+
 .convention-logo {
   height: 68px;
   margin: 0 auto 10px;
@@ -77,6 +102,11 @@
   max-height: 70vh;
   object-fit: contain;
   border-radius: 6px;
+}
+
+.modal-content.modal-content--startup-flyer img {
+  max-height: 94dvh;
+  max-width: 96vw;
 }
 
 .close-button {

@@ -1,14 +1,16 @@
 <!-- Usamos [style.display] para forzar al navegador a renderizarlo sí o sí -->
 <div class="modal" [style.display]="isVisible ? 'flex' : 'none'" (click)="onOverlayClick($event)">
-  <div class="modal-content" [class.modal-content--pdf]="currentMediaIsPdf" (click)="$event.stopPropagation()">
+  <div class="modal-content" [class.modal-content--pdf]="currentMediaIsPdf" [class.modal-content--startup-flyer]="isStartupFlyer" (click)="$event.stopPropagation()">
       @if (isConventionView) {
         <img class="convention-logo" src="Mercaderia/LogoConvencionAntioquia.png" [alt]="language.t('conventionAlt')">
       }
-      <div class="carousel-progress" [attr.aria-label]="language.format('eventCounter', { current: currentImageIndex + 1, total: activeImages.length })">
-        @for (image of activeImages; track image.src; let index = $index) {
-          <span class="carousel-progress__item" [class.carousel-progress__item--active]="index === currentImageIndex"></span>
-        }
-      </div>
+      @if (!isStartupFlyer) {
+        <div class="carousel-progress" [attr.aria-label]="language.format('eventCounter', { current: currentImageIndex + 1, total: activeImages.length })">
+          @for (image of activeImages; track image.src; let index = $index) {
+            <span class="carousel-progress__item" [class.carousel-progress__item--active]="index === currentImageIndex"></span>
+          }
+        </div>
+      }
       <span class="close-button" [title]="language.t('close')" (click)="stopCarousel()">&times;</span>
       
       @if (activeImages.length > 1) {

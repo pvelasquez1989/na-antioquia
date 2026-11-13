@@ -35,12 +35,13 @@ export class Carousel implements OnInit, OnDestroy {
   ];
 
   readonly conventionImages: CarouselImage[] = [
+    { src: 'Eventos/AporteSeptimaConvencion.png', startDate: '2026-11-14', endDate: '2026-11-16', title: 'Aporte para la Séptima Convención' },
     { src: 'Eventos/Bienvenida.jpeg', startDate: '2026-11-09', endDate: '2026-11-16', title: 'Bienvenida a la Convención', link: 'https://share.google/8O6zUqrZPfggqbofw' },
     { src: 'Eventos/TalleresPreconvencion.jpeg', startDate: '2026-11-13', endDate: '2026-11-14', title: 'Talleres', link: 'https://share.google/8O6zUqrZPfggqbofw' },
     { src: 'Eventos/Programate.jpeg', startDate: '2026-11-09', endDate: '2026-11-16', title: 'Prográmate para la Convención', link: 'https://share.google/8O6zUqrZPfggqbofw' },
     { src: 'Eventos/CaminataEcologicaFlyer.jpeg', startDate: '2026-11-01', endDate: '2026-11-12', title: 'Caminata ecológica' },
     { src: 'Eventos/CaminataEcologicaVideo.mp4', startDate: '2026-11-01', endDate: '2026-11-12', title: 'Caminata ecológica', mediaType: 'video' },
-    { src: 'Eventos/InscripcionConvencion.jpeg', title: 'Inscripción a la Convención' },
+    { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-11-14', endDate: '2026-11-16', title: 'Inscripción a la Convención' },
     { src: 'Eventos/RecienLlegados.jpeg', title: 'Nuevos productos de la Convención' },
     { src: 'Eventos/Flayer mercaderia.jpeg', title: 'Mercadería de la Convención' },
     { src: 'Eventos/Flayer precio y tallas.jpeg', title: 'Precios y tallas de la Convención' },
@@ -57,6 +58,7 @@ export class Carousel implements OnInit, OnDestroy {
   isPaused = false;
   isVisible = false;
   isConventionView = false;
+  isStartupFlyer = false;
 
   get currentImage() { return this.activeImages[this.currentImageIndex]; }
   get currentMediaIsVideo() { return this.currentImage?.mediaType === 'video'; }
@@ -87,13 +89,34 @@ export class Carousel implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    const startupFlyer = this.conventionImages.find(image =>
+      image.src === 'Eventos/AporteSeptimaConvencion.png' && this.isScheduledForToday(image)
+    );
+
+    if (startupFlyer) {
+      this.activeImages = [startupFlyer];
+      this.currentImageIndex = 0;
+      this.isPaused = false;
+      this.isConventionView = false;
+      this.isStartupFlyer = true;
+      this.isVisible = true;
+      this.initialCarouselTimeout = setTimeout(() => {
+        this.initialCarouselTimeout = undefined;
+        this.stopCarousel();
+      }, 15000);
+      return;
+    }
+
     this.initialCarouselTimeout = setTimeout(() => {
       this.initialCarouselTimeout = undefined;
       this.startCarousel();
     }, 15000);
   }
 
-  ngOnDestroy() { this.clearTimer(); }
+  ngOnDestroy() {
+    this.clearTimer();
+    if (this.initialCarouselTimeout) clearTimeout(this.initialCarouselTimeout);
+  }
 
   @HostListener('document:keydown.escape')
   onKeydownHandler() { this.stopCarousel(); }
@@ -105,6 +128,7 @@ export class Carousel implements OnInit, OnDestroy {
     }
 
     this.isConventionView = section === 'convention';
+    this.isStartupFlyer = false;
     this.activeImages = this.isConventionView
       ? [...this.conventionImages]
       : this.images.filter(image => this.isScheduledForToday(image));
@@ -136,6 +160,7 @@ export class Carousel implements OnInit, OnDestroy {
     this.clearTimer();
     this.isVisible = false;
     this.isConventionView = false;
+    this.isStartupFlyer = false;
   }
 
   clearTimer() { if (this.carouselInterval) clearInterval(this.carouselInterval); }
