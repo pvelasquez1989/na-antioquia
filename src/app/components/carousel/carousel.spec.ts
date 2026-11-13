@@ -46,10 +46,15 @@ describe('Carousel', () => {
     expect(component.conventionImages.find(({ src }) => src === 'Eventos/Bienvenida.jpeg')).toMatchObject({
       startDate: '2026-11-09',
       endDate: '2026-11-16',
+      link: 'https://share.google/8O6zUqrZPfggqbofw',
     });
     expect(component.conventionImages.find(({ src }) => src === 'Eventos/Programate.jpeg')).toMatchObject({
       startDate: '2026-11-09',
       endDate: '2026-11-16',
+      link: 'https://share.google/8O6zUqrZPfggqbofw',
+    });
+    expect(component.conventionImages.find(({ src }) => src === 'Eventos/TalleresPreconvencion.jpeg')).toMatchObject({
+      link: 'https://share.google/8O6zUqrZPfggqbofw',
     });
   });
 
