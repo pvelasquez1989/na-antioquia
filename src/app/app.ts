@@ -37,7 +37,4 @@ export class App {
     this.carousel?.startCarousel();
   }
 
-  openConvention() {
-    this.carousel?.startCarousel('convention');
-  }
 }

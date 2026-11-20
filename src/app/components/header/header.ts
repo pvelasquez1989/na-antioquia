@@ -18,7 +18,6 @@ export class Header {
   private readonly destroyRef = inject(DestroyRef);
   @ViewChild('publicInfoAudio') publicInfoAudio?: ElementRef<HTMLAudioElement>;
   @Output() eventsRequested = new EventEmitter<void>();
-  @Output() conventionRequested = new EventEmitter<void>();
 
   readonly publicInfoItems = [
     {
@@ -72,59 +71,9 @@ export class Header {
     { title: 'Aniversario Grupo El Camino', src: 'Eventos/AniversariogrupoElCamino.jpeg' },
   ];
 
-  readonly merchandiseItems = [
-    {
-      titleKey: 'personalizedTitle' as const,
-      src: 'Mercaderia/Personalizada.jpeg',
-      price: '$53.000 COP',
-    },
-    {
-      titleKey: 'otherColorsTitle' as const,
-      src: 'Mercaderia/Otros colores.jpeg',
-      price: '$48.000 COP',
-    },
-    {
-      titleKey: 'hoodieTitle' as const,
-      src: 'Mercaderia/Green Hoodie Product Showcase.png',
-      price: '$70.000 COP',
-    },
-    {
-      titleKey: 'whiteTshirtTitle' as const,
-      src: 'Mercaderia/White T-Shirt Convention Product Mockup.png',
-      price: '$48.000 COP',
-    },
-    {
-      titleKey: 'lilacTshirtTitle' as const,
-      src: 'Mercaderia/Lilac T-Shirt Convention Showcase.png',
-      price: '$48.000 COP',
-    },
-    {
-      titleKey: 'blueTshirtTitle' as const,
-      src: 'Mercaderia/Camiseta azul de convención Antioquia.png',
-      price: '$48.000 COP',
-    },
-    {
-      titleKey: 'capTitle' as const,
-      src: 'Mercaderia/Gorra azul con emblema de Antioquia.png',
-      price: '$25.000 COP',
-    },
-    {
-      titleKey: 'redTshirtAndCapTitle' as const,
-      src: 'Mercaderia/Camiseta Roja y gorra.jpeg',
-      price: 'Camiseta: $48.000 COP · Gorra: $25.000 COP',
-    },
-    {
-      titleKey: 'mugTitle' as const,
-      src: 'Mercaderia/Mug Convención de Antioquia.png',
-      price: '$25.000 COP',
-    },
-  ];
-  selectedMerchandiseItem?: (typeof this.merchandiseItems)[number];
-
   isPublicInfoOpen = false;
   isInstitutionsOpen = false;
   isEventsOpen = false;
-  isMerchandiseOpen = false;
   isAudioPlaying = false;
   currentAudioIndex = 0;
   currentEventIndex = 0;
@@ -175,13 +124,6 @@ export class Header {
     }
   }
 
-  openConvention() {
-    const path = this.router.url.split(/[?#]/, 1)[0].replace(/\/+$/, '') || '/';
-    if (path === '/convencion') {
-      this.conventionRequested.emit();
-    }
-  }
-
   closePublicInfo() {
     if (this.audioTimeoutId) {
       clearTimeout(this.audioTimeoutId);
@@ -192,25 +134,6 @@ export class Header {
 
   closeInstitutions() {
     void this.router.navigateByUrl('/');
-  }
-
-  closeMerchandise() {
-    void this.router.navigateByUrl('/');
-    this.selectedMerchandiseItem = undefined;
-  }
-
-  openProduct(item: (typeof this.merchandiseItems)[number]) {
-    this.selectedMerchandiseItem = item;
-  }
-
-  closeProduct() {
-    this.selectedMerchandiseItem = undefined;
-  }
-
-  onMerchandiseImageError(event: Event) {
-    const image = event.target as HTMLImageElement;
-    image.hidden = true;
-    image.nextElementSibling?.removeAttribute('hidden');
   }
 
   closeEvents() {
@@ -224,7 +147,6 @@ export class Header {
 
     this.isPublicInfoOpen = path === '/informacion-publica';
     this.isInstitutionsOpen = path === '/instituciones';
-    this.isMerchandiseOpen = path === '/mercaderia';
     this.isEventsOpen = false;
 
     if (this.isPublicInfoOpen && !wasPublicInfoOpen) {
@@ -238,9 +160,6 @@ export class Header {
 
     if (notifyEvents && path === '/eventos') {
       this.eventsRequested.emit();
-    }
-    if (notifyEvents && path === '/convencion') {
-      this.conventionRequested.emit();
     }
   }
 

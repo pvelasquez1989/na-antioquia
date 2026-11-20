@@ -70,23 +70,6 @@ describe('Header', () => {
     expect(component.publicInfoItems.some((item) => item.src.includes('Agosto'))).toBe(false);
   });
 
-  it('opens the merchandise dialog when its route is activated', async () => {
-    await TestBed.inject(Router).navigateByUrl('/mercaderia');
-
-    expect(component.isMerchandiseOpen).toBe(true);
-  });
-
-  it('closes the merchandise dialog and returns to the home route', async () => {
-    const router = TestBed.inject(Router);
-    await router.navigateByUrl('/mercaderia');
-
-    component.closeMerchandise();
-    await fixture.whenStable();
-
-    expect(router.url).toBe('/');
-    expect(component.isMerchandiseOpen).toBe(false);
-  });
-
   it('keeps the events carousel action when navigating to its route', async () => {
     const eventsRequested = vi.spyOn(component.eventsRequested, 'emit');
 
@@ -99,27 +82,10 @@ describe('Header', () => {
     expect(eventsRequested).toHaveBeenCalledTimes(2);
   });
 
-  it('opens the convention carousel when navigating to its route', async () => {
-    const conventionRequested = vi.spyOn(component.conventionRequested, 'emit');
-
-    await TestBed.inject(Router).navigateByUrl('/convencion');
-
-    expect(conventionRequested).toHaveBeenCalledOnce();
-
-    component.openConvention();
-
-    expect(conventionRequested).toHaveBeenCalledTimes(2);
-  });
-
   it('uses the favicon for the events quick-link icon', () => {
     const eventsIcon = fixture.nativeElement.querySelector('.quick-link__circle--events img');
 
     expect(eventsIcon.getAttribute('src')).toBe('favicon.ico');
   });
 
-  it('uses the convention logo for the convention quick-link icon', () => {
-    const conventionIcon = fixture.nativeElement.querySelector('.quick-link__circle--convention img');
-
-    expect(conventionIcon.getAttribute('src')).toBe('Mercaderia/LogoConvencionAntioquia.png');
-  });
 });

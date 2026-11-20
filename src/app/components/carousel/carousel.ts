@@ -24,32 +24,17 @@ export class Carousel implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   images: CarouselImage[] = [
-    { src: 'Eventos/SeptimaEdicion.jpeg', startDate: '2026-11-12', endDate: '2026-12-08' },
+    { src: 'Eventos/FestivaldePasos.jpeg', startDate: '2026-11-20', endDate: '2026-11-21' },
     { src: 'Eventos/MaratonicaOlas.jpeg', startDate: '2026-11-06', endDate: '2026-11-14' },
+    { src: 'Eventos/AniversarioGrupoLaFortaleza.jpeg', startDate: '2026-11-20', endDate: '2026-11-28' },
+    { src: 'Eventos/VideoPadrinazgo.mp4', startDate: '2026-11-20', endDate: '2026-12-05', title: 'Video de padrinazgo', mediaType: 'video' },
     { src: 'Eventos/Padrinazgo.jpeg', startDate: '2026-11-06', endDate: '2026-12-05' },
+    { src: 'Eventos/SeptimaEdicion.jpeg', startDate: '2026-11-12', endDate: '2026-12-08' },
     { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-11-13', endDate: '2026-11-17', link: 'https://meet.google.com/bzt-jmky-udh' },
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
     { src: 'Eventos/QRUltimaEdicion.jpeg', startDate: '2026-07-26', endDate: '2027-07-31' },
     { src: 'Eventos/MaratonicaLosLazos.jpeg', startDate: '2026-07-07', endDate: '2026-12-31' },
     { src: 'Eventos/MaratonicaGrupoVida.jpeg', startDate: '2026-07-08', endDate: '2026-12-31' },
-  ];
-
-  readonly conventionImages: CarouselImage[] = [
-    { src: 'Eventos/AporteSeptimaConvencion.png', startDate: '2026-11-14', endDate: '2026-11-16', title: 'Aporte para la Séptima Convención' },
-    { src: 'Eventos/VideoConvencion.mp4', startDate: '2026-11-13', endDate: '2026-11-16', title: 'Video de la Convención', mediaType: 'video' },
-    { src: 'Eventos/Bienvenida.jpeg', startDate: '2026-11-09', endDate: '2026-11-16', title: 'Bienvenida a la Convención', link: 'https://share.google/8O6zUqrZPfggqbofw' },
-    { src: 'Eventos/TalleresPreconvencion.jpeg', startDate: '2026-11-13', endDate: '2026-11-14', title: 'Talleres', link: 'https://share.google/8O6zUqrZPfggqbofw' },
-    { src: 'Eventos/Programate.jpeg', startDate: '2026-11-09', endDate: '2026-11-16', title: 'Prográmate para la Convención', link: 'https://share.google/8O6zUqrZPfggqbofw' },
-    { src: 'Eventos/CaminataEcologicaFlyer.jpeg', startDate: '2026-11-01', endDate: '2026-11-12', title: 'Caminata ecológica' },
-    { src: 'Eventos/CaminataEcologicaVideo.mp4', startDate: '2026-11-01', endDate: '2026-11-12', title: 'Caminata ecológica', mediaType: 'video' },
-    { src: 'Eventos/InscripcionConvencion.jpeg', startDate: '2026-11-14', endDate: '2026-11-16', title: 'Inscripción a la Convención' },
-    { src: 'Eventos/RecienLlegados.jpeg', title: 'Nuevos productos de la Convención' },
-    { src: 'Eventos/Flayer mercaderia.jpeg', title: 'Mercadería de la Convención' },
-    { src: 'Eventos/Flayer precio y tallas.jpeg', title: 'Precios y tallas de la Convención' },
-    { src: 'Mercaderia/MesaMercaderia.jpeg', title: 'Mesa de mercadería de la Convención' },
-    { src: 'Mercaderia/Guia_hoteles_Envigado_Narcoticos_Anonimos (1).pdf', title: 'Guía de hoteles de Envigado', mediaType: 'pdf' },
-    { src: 'Mercaderia/Guia_restaurantes_Envigado_fondo_azul.pdf', title: 'Guía de restaurantes de Envigado', mediaType: 'pdf' },
-    { src: 'Mercaderia/VideoInvitacionConvencion.mp4', title: 'Invitación a la Convención', mediaType: 'video' },
   ];
 
   activeImages: CarouselImage[] = [];
@@ -58,8 +43,6 @@ export class Carousel implements OnInit, OnDestroy {
   private initialCarouselTimeout?: ReturnType<typeof setTimeout>;
   isPaused = false;
   isVisible = false;
-  isConventionView = false;
-  isStartupFlyer = false;
 
   get currentImage() { return this.activeImages[this.currentImageIndex]; }
   get currentMediaIsVideo() { return this.currentImage?.mediaType === 'video'; }
@@ -90,24 +73,6 @@ export class Carousel implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
-    const startupFlyer = this.conventionImages.find(image =>
-      image.src === 'Eventos/AporteSeptimaConvencion.png' && this.isScheduledForToday(image)
-    );
-
-    if (startupFlyer) {
-      this.activeImages = [startupFlyer];
-      this.currentImageIndex = 0;
-      this.isPaused = false;
-      this.isConventionView = false;
-      this.isStartupFlyer = true;
-      this.isVisible = true;
-      this.initialCarouselTimeout = setTimeout(() => {
-        this.initialCarouselTimeout = undefined;
-        this.stopCarousel();
-      }, 15000);
-      return;
-    }
-
     this.initialCarouselTimeout = setTimeout(() => {
       this.initialCarouselTimeout = undefined;
       this.startCarousel();
@@ -122,17 +87,13 @@ export class Carousel implements OnInit, OnDestroy {
   @HostListener('document:keydown.escape')
   onKeydownHandler() { this.stopCarousel(); }
 
-  startCarousel(section: 'events' | 'convention' = 'events') {
+  startCarousel() {
     if (this.initialCarouselTimeout) {
       clearTimeout(this.initialCarouselTimeout);
       this.initialCarouselTimeout = undefined;
     }
 
-    this.isConventionView = section === 'convention';
-    this.isStartupFlyer = false;
-    this.activeImages = this.isConventionView
-      ? [...this.conventionImages]
-      : this.images.filter(image => this.isScheduledForToday(image));
+    this.activeImages = this.images.filter(image => this.isScheduledForToday(image));
 
     if (this.activeImages.length > 0) {
       this.currentImageIndex = 0;
@@ -160,8 +121,6 @@ export class Carousel implements OnInit, OnDestroy {
     }
     this.clearTimer();
     this.isVisible = false;
-    this.isConventionView = false;
-    this.isStartupFlyer = false;
   }
 
   clearTimer() { if (this.carouselInterval) clearInterval(this.carouselInterval); }

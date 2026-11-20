@@ -79,12 +79,6 @@
     width: 72px;
 }
 
-.quick-link__circle--convention img {
-    height: 68px;
-    object-fit: contain;
-    width: 68px;
-}
-
 .quick-link:hover .quick-link__circle,
 .quick-link:focus-visible .quick-link__circle {
     box-shadow: 0 6px 14px rgba(0, 48, 135, 0.28);

@@ -46,7 +46,7 @@ ng test
 
 ## Application routes
 
-The quick links support direct URLs for `/informacion-publica`, `/instituciones`, `/eventos`, and `/mercaderia`. Hosting must serve `index.html` for these client-side routes; the `public/_redirects` file provides that fallback for compatible hosts.
+The quick links support direct URLs for `/informacion-publica`, `/instituciones`, `/eventos`. Hosting must serve `index.html` for these client-side routes; the `public/_redirects` file provides that fallback for compatible hosts.
 
 ## Running end-to-end tests
 
