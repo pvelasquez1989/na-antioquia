@@ -490,7 +490,7 @@ export const NA_ZONES: Zone[] = [
         schedules: [{ days: 'Todos los días:', hours: '7*24 Maratónica' }],
         virtualLinks: [
           { text: 'Zoom ID: 742 361 4458 (Clave 123)', url: 'https://zoom.us/j/7423614458' },
-          { text: 'Unirse al grupo de WhatsApp 💬', url: 'https://chat.whatsapp.com/ElZ2qBJYAS62HR0vmEUKmM' }
+          { text: 'Unirse al grupo de WhatsApp 💬', url: 'https://chat.whatsapp.com/E4g2AI8DvaTDKkoCYuFMVQ?s=sh&p=a&iam=2' }
         ]
       },
       {

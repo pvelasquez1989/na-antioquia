@@ -24,13 +24,13 @@ export class Carousel implements OnInit, OnDestroy {
   constructor(private cdr: ChangeDetectorRef) {}
 
   images: CarouselImage[] = [
+    { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-11-23', endDate: '2026-11-24', link: 'https://meet.google.com/bzt-jmky-udh' },
     { src: 'Eventos/FestivaldePasos.jpeg', startDate: '2026-11-20', endDate: '2026-11-21' },
     { src: 'Eventos/MaratonicaOlas.jpeg', startDate: '2026-11-06', endDate: '2026-11-14' },
     { src: 'Eventos/AniversarioGrupoLaFortaleza.jpeg', startDate: '2026-11-20', endDate: '2026-11-28' },
     { src: 'Eventos/VideoPadrinazgo.mp4', startDate: '2026-11-20', endDate: '2026-12-05', title: 'Video de padrinazgo', mediaType: 'video' },
     { src: 'Eventos/Padrinazgo.jpeg', startDate: '2026-11-06', endDate: '2026-12-05' },
     { src: 'Eventos/SeptimaEdicion.jpeg', startDate: '2026-11-12', endDate: '2026-12-08' },
-    { src: 'Eventos/TallerDePasosElCamino.jpeg', startDate: '2026-11-13', endDate: '2026-11-17', link: 'https://meet.google.com/bzt-jmky-udh' },
     { src: 'Eventos/Clana2027.jpeg', startDate: '2026-07-17', endDate: '2026-12-31' },
     { src: 'Eventos/QRUltimaEdicion.jpeg', startDate: '2026-07-26', endDate: '2027-07-31' },
     { src: 'Eventos/MaratonicaLosLazos.jpeg', startDate: '2026-07-07', endDate: '2026-12-31' },
